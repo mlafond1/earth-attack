@@ -20,9 +20,7 @@ Le jeu consiste à construire des tours armées de différents types de projecti
 Pour vous battre, les troupes ennemies n'ont qu'à se déplacer du point d'entré au point de sortie sur la carte en suivant un chemin déjà pré-établie. Le joueur peut choisir de placer ses défenses sur les côtés du chemin et doit les construire de façon stratégique pour empêcher chaque unité adverse de se rendre jusqu'à la fin du chemin, car il ne dispose que d'un certain nombre de vie ou de passe droit tout au long de la partie. Si trop d'unités ennemies réussissent à traverser votre défense, vous perdez la partie.
 
 ## Division des tâches
-
-
+Pour la division des tâches, nous allons utiliser une méthode agile pour déterminer à chaque semaine les tâches à faire et qui les feront. Comme nous n'avons tous pas d'expérience en infographie, le but est que tous les membres de l'équipe puissent toucher à toutes les étapes du développement du jeu. C'est pour cela qu'à chaque semaine, nous allons évaluer qui fait quoi et essayer de changer les rôles d'une semaine à l'autre pour ne pas avoir la même personne qui aurait fait le même type de tâches durant tout le projet.
 
 ## Licence
-
 Pour le moment, aucune licence n'a été utilisé pour le projet.
