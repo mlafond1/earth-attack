@@ -4,8 +4,8 @@
 Earth Attack est un projet de session qui consiste à faire un jeu vidéo pour le cours d'infographie - INF5071 lors de la session d'hiver 2019. Le cours est donné par M. Alexandre Blondin. Afin de réaliser ce projet, nous allons utiliser le moteur de jeu Unity, ainsi que l'application Blender pour les modèles et animations et Krita comme logiciel de dessin 2D.
 
 ## Auteurs
-Jonathan Roy - ROYJ17058807
-Mathieu Lafond - LAFM07079707
+Jonathan Roy - ROYJ17058807  
+Mathieu Lafond - LAFM07079707  
 Akim Laberge-Touat - LABA14059307
 
 ## Concept
