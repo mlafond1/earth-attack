@@ -30,4 +30,24 @@ public class MapHelper {
         return new Vector3(pos_x, mapCollider.bounds.size.y/2f ,pos_z);
     }
 
+    static public void loadFromTxtFile(string fileName, out bool[,] tiles, out int nbTiles){
+        string[] lines = System.IO.File.ReadAllLines(@fileName);
+        nbTiles = 1;
+        tiles = new bool[1,1];
+        bool success = int.TryParse(lines[0], out nbTiles); 
+        if (!success) return;
+
+        tiles = new bool[nbTiles,nbTiles];
+        for(int line = 1; line < lines.Length; ++line){
+            for(int col = 0; col < lines[line].Length; ++col){
+                char c = lines[line][col];
+                if(c != ' '){
+                    tiles[line-1, col] = true;
+                }
+                // pourrait être adapté pour lire le chemin
+                // tiles pourrait être autre chose que des bool aussi
+            }
+        }
+    }
+
 }

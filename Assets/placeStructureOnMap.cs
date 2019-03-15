@@ -6,7 +6,7 @@ public class PlaceStructureOnMap : MonoBehaviour
 {
     private static int DEFAULT_DIMENSION = 11;
     private static GameObject nextStructure;
-    int nbTiles;
+    int nbTiles = 1;
     bool[,] tileMap;
 
     MapHelper mapHelper;
@@ -14,11 +14,17 @@ public class PlaceStructureOnMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //nextStructure = GameObject.Find("constructionSol_1");
-        bool[,] defaultTiles = new bool[DEFAULT_DIMENSION, DEFAULT_DIMENSION];
-        SetUpMap(defaultTiles, DEFAULT_DIMENSION);
+        //bool[,] defaultTiles = new bool[DEFAULT_DIMENSION, DEFAULT_DIMENSION];
+        //SetUpMap(defaultTiles, DEFAULT_DIMENSION);
+        SetUpMapFromFile("map1.txt");
+        Debug.Log("Map size: " + nbTiles+"x"+nbTiles);
     }
     
+    public void SetUpMapFromFile(string fileName){
+        MapHelper.loadFromTxtFile(fileName, out tileMap, out nbTiles);
+        mapHelper = new MapHelper(this.gameObject, nbTiles);
+    }
+
     public void SetUpMap(bool[,] tiles, int length){
         nbTiles = length;
         tileMap = tiles;
