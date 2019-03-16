@@ -6,9 +6,10 @@ public class EnemyHealth : MonoBehaviour
 {
     float health;
 
-    public void TakeDamage(float damage){
+    public void TakeDamage(float damage, out bool isDead){
         health -= damage;
-        if(health <= 0) Death();
+        isDead = health <= 0;
+        if(isDead) Death();
     }
 
     public void Death(){

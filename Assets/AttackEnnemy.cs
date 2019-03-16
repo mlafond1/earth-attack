@@ -56,7 +56,9 @@ public class AttackEnnemy : MonoBehaviour
         if(nextAttackTimer >= attackRate){
             nextAttackTimer = 0;
             Debug.Log(name + " is attacking " + focus.name);
-            focus.TakeDamage(attackDamage);
+            bool isDead = false;
+            focus.TakeDamage(attackDamage, out isDead);
+            if(isDead) LoseFocus();
         }
     }
 
