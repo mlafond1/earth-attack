@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackEnnemy : MonoBehaviour
+public class AttackEnemy : MonoBehaviour
 {
 
     float attackRange;
