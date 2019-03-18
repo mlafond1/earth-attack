@@ -11,6 +11,7 @@ public class AttackEnemy : MonoBehaviour
     float nextAttackTimer;
     Vector3 position;
     EnemyHealth focus;
+    public Transform projectile;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +57,6 @@ public class AttackEnemy : MonoBehaviour
         if(nextAttackTimer >= attackRate){
             nextAttackTimer = 0;
             Debug.Log(name + " is attacking " + focus.name);
-            ProjectileAnimation projectile = GameObject.FindObjectOfType<ProjectileAnimation>(); 
             GameObject gameProjectile = Instantiate(projectile.gameObject, transform.position + new Vector3(0,1,0) , transform.rotation);
             gameProjectile.GetComponent<ProjectileAnimation>().SetTarget(focus.transform, 15f);
             bool isDead = false;
