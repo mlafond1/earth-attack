@@ -2,24 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public float speed = 10f;
-    private Transform target;
+    private Vector3 target;
     private int wavepointIndex = 0;
+    private bool hasTarget = false;
     // Start is called before the first frame update
     void Start()
     {
-        target = Waypoints.points[0];
+        if(Waypoints.isReady){
+            target = Waypoints.points[0];
+            hasTarget = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = target.position - transform.position;
+        if(!hasTarget){
+            if(!Waypoints.isReady) return;
+            target = Waypoints.points[0];
+            hasTarget = true;
+        }
+        Vector3 dir = target - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        if (Vector3.Distance(transform.position, target.position) <= 0.5f)
+        if (Vector3.Distance(transform.position, target) <= 0.5f)
         {
             GetNextWaypoint();
         }

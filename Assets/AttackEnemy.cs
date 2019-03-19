@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackEnnemy : MonoBehaviour
+public class AttackEnemy : MonoBehaviour
 {
 
     float attackRange;
@@ -11,6 +11,7 @@ public class AttackEnnemy : MonoBehaviour
     float nextAttackTimer;
     Vector3 position;
     EnemyHealth focus;
+    public Transform projectile;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,8 @@ public class AttackEnnemy : MonoBehaviour
         if(nextAttackTimer >= attackRate){
             nextAttackTimer = 0;
             Debug.Log(name + " is attacking " + focus.name);
+            GameObject gameProjectile = Instantiate(projectile.gameObject, transform.position + new Vector3(0,1,0) , transform.rotation);
+            gameProjectile.GetComponent<ProjectileAnimation>().SetTarget(focus.transform, 15f);
             bool isDead = false;
             focus.TakeDamage(attackDamage, out isDead);
             if(isDead) LoseFocus();

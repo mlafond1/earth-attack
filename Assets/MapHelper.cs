@@ -30,24 +30,37 @@ public class MapHelper {
         return new Vector3(pos_x, mapCollider.bounds.size.y/2f ,pos_z);
     }
 
-    static public void loadFromTxtFile(string fileName, out bool[,] tiles, out int nbTiles){
+    static public void loadFromTxtFile(string fileName, out bool[,] tiles, out int nbTiles, out Vector2Int[] path){
         string[] lines = System.IO.File.ReadAllLines(@fileName);
         nbTiles = 1;
         tiles = new bool[1,1];
-        bool success = int.TryParse(lines[0], out nbTiles); 
+        path = new Vector2Int[1];
+        bool success = int.TryParse(lines[0], out nbTiles) && loadPathFromString(lines[1], out path); 
         if (!success) return;
-
         tiles = new bool[nbTiles,nbTiles];
-        for(int line = 1; line < lines.Length; ++line){
+        for(int line = 2; line < lines.Length; ++line){
             for(int col = 0; col < lines[line].Length; ++col){
                 char c = lines[line][col];
                 if(c != ' '){
-                    tiles[line-1, col] = true;
+                    tiles[line-2, col] = true;
                 }
-                // pourrait être adapté pour lire le chemin
-                // tiles pourrait être autre chose que des bool aussi
             }
         }
+    }
+
+    static public bool loadPathFromString(string linePath, out Vector2Int[] path){
+        string[] strPath = linePath.Split(' ');
+        path = new Vector2Int[strPath.Length];
+        bool success = true;
+        for(int i = 0; i < strPath.Length; ++i){
+            string[] indexes = strPath[i].Split(';');
+            int x = 0, y = 0;
+            success = int.TryParse(indexes[0], out x) && int.TryParse(indexes[1], out y);
+            if(!success) break;
+            path[i] = new Vector2Int(x, y);
+            Debug.Log( i + " : " + path[i]);
+        }
+        return success;
     }
 
 }

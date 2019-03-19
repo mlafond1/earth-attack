@@ -14,18 +14,15 @@ public class PlaceStructureOnMap : MonoBehaviour
     void Start()
     {
         SetUpMapFromFile("map1.txt");
+
         Debug.Log("Map size: " + nbTiles+"x"+nbTiles);
     }
     
     public void SetUpMapFromFile(string fileName){
-        MapHelper.loadFromTxtFile(fileName, out tileMap, out nbTiles);
+        Vector2Int[] path;
+        MapHelper.loadFromTxtFile(fileName, out tileMap, out nbTiles, out path);
         mapHelper = new MapHelper(this.gameObject, nbTiles);
-    }
-
-    public void SetUpMap(bool[,] tiles, int length){
-        nbTiles = length;
-        tileMap = tiles;
-        mapHelper = new MapHelper(this.gameObject, nbTiles);
+        Waypoints.GeneratePathFromIndexes(path, mapHelper);
     }
 
     public static void ChangeStructure(GameObject structure){
