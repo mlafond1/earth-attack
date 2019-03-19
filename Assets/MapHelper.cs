@@ -63,4 +63,8 @@ public class MapHelper {
         return success;
     }
 
+    public float getTileDimension() { 
+        return tileDimension_x;
+    } 
+
 }

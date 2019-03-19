@@ -504,6 +504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69356b12f00541a4a8290f47de62c591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileModel: {fileID: 4036673358654327646, guid: 14c34b23305520441b30c699bf137a6e,
+    type: 3}
 --- !u!65 &1172378415
 BoxCollider:
   m_ObjectHideFlags: 0
