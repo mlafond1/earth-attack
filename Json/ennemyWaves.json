@@ -1,0 +1,761 @@
+{
+    "ennemies": [
+        {
+            "name": "Matt Damon",
+            "hp": 20,
+            "speed": 32,
+            "value": 2,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v2",
+            "hp": 25,
+            "speed": 32,
+            "value": 4,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank",
+            "hp": 35,
+            "speed": 32,
+            "value": 4,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v3",
+            "hp": 50,
+            "speed": 32,
+            "value": 5,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Jet",
+            "hp": 75,
+            "speed": 32,
+            "value": 6,
+            "texture": "jet",
+            "attribute": "air"
+        },
+    
+        {
+            "name": "Matt Damon v4",
+            "hp": 85,
+            "speed": 64,
+            "value": 8,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank v2",
+            "hp": 110,
+            "speed": 32,
+            "value": 10,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v5",
+            "hp": 140,
+            "speed": 32,
+            "value": 10,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Jet v2",
+            "hp": 160,
+            "speed": 32,
+            "value": 12,
+            "texture": "jet",
+            "attribute": "air"
+        },
+    
+        {
+            "name": "Damon Tank v3",
+            "hp": 200,
+            "speed": 32,
+            "value": 14,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank v4",
+            "hp": 220,
+            "speed": 32,
+            "value": 15,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v6",
+            "hp": 220,
+            "speed": 32,
+            "value": 16,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v7",
+            "hp": 250,
+            "speed": 32,
+            "value": 18,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Jet v3",
+            "hp": 290,
+            "speed": 32,
+            "value": 20,
+            "texture": "jet",
+            "attribute": "air"
+        },
+    
+        {
+            "name": "Damon Tank v5",
+            "hp": 330,
+            "speed": 32,
+            "value": 24,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v7",
+            "hp": 330,
+            "speed": 64,
+            "value": 260,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v8",
+            "hp": 430,
+            "speed": 32,
+            "value": 340,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v9",
+            "hp": 490,
+            "speed": 32,
+            "value": 380,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Jet v4",
+            "hp": 570,
+            "speed": 32,
+            "value": 450,
+            "texture": "jet",
+            "attribute": "air"
+        },
+    
+        {
+            "name": "Damon Tank v6",
+            "hp": 650,
+            "speed": 32,
+            "value": 550,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank v7",
+            "hp": 735,
+            "speed": 32,
+            "value": 600,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v10",
+            "hp": 760,
+            "speed": 64,
+            "value": 640,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Jet v5",
+            "hp": 900,
+            "speed": 32,
+            "value": 670,
+            "texture": "jet",
+            "attribute": "air"
+        },
+    
+        {
+            "name": "Matt Damon v11",
+            "hp": 1100,
+            "speed": 32,
+            "value": 725,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank v8",
+            "hp": 1200,
+            "speed": 32,
+            "value": 755,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v12",
+            "hp": 1350,
+            "speed": 32,
+            "value": 775,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Jet v6",
+            "hp": 1450,
+            "speed": 32,
+            "value": 800,
+            "texture": "jet",
+            "attribute": "air"
+        },
+    
+        {
+            "name": "Matt Damon v13",
+            "hp": 1575,
+            "speed": 32,
+            "value": 825,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v14",
+            "hp": 1700,
+            "speed": 32,
+            "value": 875,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v15",
+            "hp": 1775,
+            "speed": 32,
+            "value": 895,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Jet v7",
+            "hp": 1870,
+            "speed": 32,
+            "value": 950,
+            "texture": "jet",
+            "attribute": "air"
+        },
+    
+        {
+            "name": "Matt Damon v16",
+            "hp": 2000,
+            "speed": 32,
+            "value": 975,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v17",
+            "hp": 2100,
+            "speed": 64,
+            "value": 1000,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank v9",
+            "hp": 2200,
+            "speed": 32,
+            "value": 1050,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Jet v8",
+            "hp": 2300,
+            "speed": 32,
+            "value": 1100,
+            "texture": "jet",
+            "attribute": "air"
+        },
+    
+        {
+            "name": "Matt Damon v18",
+            "hp": 2400,
+            "speed": 32,
+            "value": 1150,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank v10",
+            "hp": 2550,
+            "speed": 32,
+            "value": 1200,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Matt Damon v19",
+            "hp": 2700,
+            "speed": 32,
+            "value": 1200,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank v11",
+            "hp": 3000,
+            "speed": 64,
+            "value": 1300,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank v12",
+            "hp": 3150,
+            "speed": 32,
+            "value": 1400,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Jet v9",
+            "hp": 3250,
+            "speed": 32,
+            "value": 1500,
+            "texture": "jet",
+            "attribute": "air"
+        },
+    
+        {
+            "name": "Matt Damon v20",
+            "hp": 3500,
+            "speed": 32,
+            "value": 2000,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+
+        {
+            "name": "Matt Damon Boss",
+            "hp": 650,
+            "speed": 32,
+            "value": 350,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank Boss",
+            "hp": 3000,
+            "speed": 37,
+            "value": 700,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank Boss v2",
+            "hp": 8000,
+            "speed": 37,
+            "value": 1000,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Jet Boss",
+            "hp": 20000,
+            "speed": 37,
+            "value": 1500,
+            "texture": "jet",
+            "attribute": "air"
+        },
+    
+        {
+            "name": "Matt Damon Boss v2",
+            "hp": 50000,
+            "speed": 50,
+            "value": 3000,
+            "texture": "astronaut",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank Boss v3",
+            "hp": 65000,
+            "speed": 37,
+            "value": 4000,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Tank Boss v4",
+            "hp": 75000,
+            "speed": 37,
+            "value": 4000,
+            "texture": "tank",
+            "attribute": "ground"
+        },
+    
+        {
+            "name": "Damon Jet Boss v2",
+            "hp": 300000,
+            "speed": 15,
+            "value": 4000,
+            "texture": "jet",
+            "attribute": "air"
+        }
+    ],
+    "waves": [
+        {
+            "waveName": "1",
+            "unitInfos": [
+                { "unitName": "Matt Damon", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "2",
+            "unitInfos": [
+                { "unitName": "Matt Damon v2", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "3",
+            "unitInfos": [
+                { "unitName": "Damon Tank", "howMany": 12, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "4",
+            "unitInfos": [
+                { "unitName": "Matt Damon v3", "howMany": 12, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "Boss1",
+            "unitInfos": [
+                { "unitName": "Matt Damon v3", "howMany": 6, "releaseSpeed": 1000 },
+                { "unitName": "Matt Damon Boss", "howMany": 1, "releaseSpeed": 500 }
+            ]
+        },
+     
+        { "waveName": "6",
+            "unitInfos": [
+                { "unitName": "Damon Jet", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "7",
+            "unitInfos": [
+                { "unitName": "Matt Damon v4", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "8",
+            "unitInfos": [
+                { "unitName": "Damon Tank v2", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "9",
+            "unitInfos": [
+                { "unitName": "Matt Damon v5", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "10",
+            "unitInfos": [
+                { "unitName": "Damon Jet v2", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "11",
+            "unitInfos": [
+                { "unitName": "Damon Tank v3", "howMany": 12, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "Boss2",
+            "unitInfos": [
+                { "unitName": "Damon Tank v3", "howMany": 6, "releaseSpeed": 1000 },
+                { "unitName": "Damon Tank Boss", "howMany": 1, "releaseSpeed": 0 }
+            ]
+        },
+     
+        { "waveName": "13",
+            "unitInfos": [
+                { "unitName": "Damon Tank v4", "howMany": 20, "releaseSpeed": 500 }
+            ]
+        },
+        
+        { "waveName": "14",
+            "unitInfos": [
+                { "unitName": "Matt Damon v6", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "15",
+            "unitInfos": [
+                { "unitName": "Matt Damon v7", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "16",
+            "unitInfos": [
+                { "unitName": "Damon Jet v3", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "17",
+            "unitInfos": [
+                { "unitName": "Damon Tank v5", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "18",
+            "unitInfos": [
+                { "unitName": "Matt Damon v7", "howMany": 12, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "Boss3",
+            "unitInfos": [
+                { "unitName": "Damon Tank Boss v2", "howMany": 4, "releaseSpeed": 500 }
+            ]
+        },
+      
+        { "waveName": "20",
+            "unitInfos": [
+                { "unitName": "Matt Damon v8", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "21",
+            "unitInfos": [
+                { "unitName": "Matt Damon v9", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "22",
+            "unitInfos": [
+                { "unitName": "Damon Jet v4", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "23",
+            "unitInfos": [
+                { "unitName": "Damon Tank v6", "howMany": 20, "releaseSpeed": 500 }
+            ]
+        },
+        
+        { "waveName": "24",
+            "unitInfos": [
+                { "unitName": "Damon Tank v7", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "25",
+            "unitInfos": [
+                { "unitName": "Matt Damon v10", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+      
+        { "waveName": "Boss4",
+            "unitInfos": [
+                { "unitName": "Matt Damon v10", "howMany": 5, "releaseSpeed": 500 },
+                { "unitName": "Damon Jet Boss", "howMany": 1, "releaseSpeed": 0 }
+            ]
+        },
+     
+        { "waveName": "27",
+            "unitInfos": [
+                { "unitName": "Damon Jet v5", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "28",
+            "unitInfos": [
+                { "unitName": "Matt Damon v11", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "29",
+            "unitInfos": [
+                { "unitName": "Damon Tank v8", "howMany": 20, "releaseSpeed": 500 }
+            ]
+        },
+        
+        { "waveName": "30",
+            "unitInfos": [
+                { "unitName": "Matt Damon v12", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "31",
+            "unitInfos": [
+                { "unitName": "Damon Jet v6", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "32",
+            "unitInfos": [
+                { "unitName": "Matt Damon v13", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+      
+        { "waveName": "Boss5",
+            "unitInfos": [
+                { "unitName": "Matt Damon v13", "howMany": 5, "releaseSpeed": 500 },
+                { "unitName": "Matt Damon Boss v2", "howMany": 1, "releaseSpeed": 0 }
+            ]
+        },
+    
+        { "waveName": "34",
+            "unitInfos": [
+                { "unitName": "Matt Damon v14", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "35",
+            "unitInfos": [
+                { "unitName": "Matt Damon v15", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "36",
+            "unitInfos": [
+                { "unitName": "Damon Jet v7", "howMany": 20, "releaseSpeed": 500 }
+            ]
+        },
+        
+        { "waveName": "37",
+            "unitInfos": [
+                { "unitName": "Matt Damon v16", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "38",
+            "unitInfos": [
+                { "unitName": "Matt Damon v17", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "39",
+            "unitInfos": [
+                { "unitName": "Damon Tank v9", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+      
+        { "waveName": "Boss6",
+            "unitInfos": [
+                { "unitName": "Damon Tank Boss v3", "howMany": 1, "releaseSpeed": 0 }
+            ]
+        },
+     
+        { "waveName": "41",
+            "unitInfos": [
+                { "unitName": "Damon Jet v8", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "42",
+            "unitInfos": [
+                { "unitName": "Matt Damon v18", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "43",
+            "unitInfos": [
+                { "unitName": "Damon Tank v10", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "44",
+            "unitInfos": [
+                { "unitName": "Matt Damon v19", "howMany": 10, "releaseSpeed": 1000 }
+            ]
+        },
+      
+        { "waveName": "Boss7",
+            "unitInfos": [
+                { "unitName": "Damon Tank Boss v4", "howMany": 1, "releaseSpeed": 0 }
+            ]
+        },
+      
+        { "waveName": "46",
+            "unitInfos": [
+                { "unitName": "Damon Tank v11", "howMany": 25, "releaseSpeed": 500 }
+            ]
+        },
+        
+        { "waveName": "47",
+            "unitInfos": [
+                { "unitName": "Damon Tank v12", "howMany": 15, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "48",
+            "unitInfos": [
+                { "unitName": "Damon Jet v9", "howMany": 15, "releaseSpeed": 1000 }
+            ]
+        },
+        
+        { "waveName": "49",
+            "unitInfos": [
+                { "unitName": "Matt Damon v20", "howMany": 50, "releaseSpeed": 750 }
+            ]
+        },      
+      
+        { "waveName": "FinalBoss",
+            "unitInfos": [
+                { "unitName": "Matt Damon Boss v2", "howMany": 5, "releaseSpeed": 750 },
+                { "unitName": "Damon Tank Boss v4", "howMany": 3, "releaseSpeed": 750 },
+                { "unitName": "Damon Jet Boss v2", "howMany": 1, "releaseSpeed": 0 }
+            ]
+        }
+    ]
+}
