@@ -17,15 +17,9 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         health = 100f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -593,8 +593,8 @@ GameObject:
   - component: {fileID: 1207903751}
   - component: {fileID: 1207903750}
   - component: {fileID: 1207903749}
-  - component: {fileID: 1207903747}
-  - component: {fileID: 1207903748}
+  - component: {fileID: 3699256370966808216}
+  - component: {fileID: 6002816133002551766}
   m_Layer: 0
   m_Name: ennemy_astronaut
   m_TagString: Untagged
@@ -654,7 +654,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 36
   m_CollisionDetection: 0
---- !u!114 &1207903747
+--- !u!114 &3699256370966808216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -663,10 +663,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1207903746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 340265dccada4f74284d44ee2ccbbf9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 24b94300ba1bf374382d217c3e5d3a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1207903748
+  speed: 10
+--- !u!114 &6002816133002551766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -675,10 +676,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1207903746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 282429667b3d29649ace72879c6e33fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fdabf1440767e747aa9cb2b6612c78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!1 &1303207839
 GameObject:
   m_ObjectHideFlags: 0

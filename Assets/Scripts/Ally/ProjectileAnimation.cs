@@ -15,7 +15,6 @@ public class ProjectileAnimation : MonoBehaviour
         hasTarget = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(!hasTarget) return;
@@ -24,7 +23,7 @@ public class ProjectileAnimation : MonoBehaviour
             transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
             if (Vector3.Distance(transform.position, target.position) <= 0.5f) 
                 Destroy(gameObject);
-        } catch (MissingReferenceException e){
+        } catch (MissingReferenceException){
             DestroyImmediate(gameObject);
         }
     }

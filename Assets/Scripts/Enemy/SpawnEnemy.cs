@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-public class spawn : MonoBehaviour
+public class SpawnEnemy : MonoBehaviour
 {
-    public Transform ennemy;
+    public Transform enemy;
 
     public Transform spawnPoint;
 
@@ -31,14 +31,14 @@ public class spawn : MonoBehaviour
     {
         for (int i = 0; i < waveIndex; i++)
         {
-            SpawnEnnemy();
+            SpawnAnEnemy();
             yield return new WaitForSeconds(0.5f);
         }
-        
+        ++waveIndex;
     }
 
-    void SpawnEnnemy()
+    void SpawnAnEnemy()
     {
-        Instantiate(ennemy, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
 }

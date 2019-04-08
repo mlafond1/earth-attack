@@ -59,10 +59,18 @@ public class AttackEnemy : MonoBehaviour
             Debug.Log(name + " is attacking " + focus.name);
             GameObject gameProjectile = Instantiate(projectile.gameObject, transform.position + new Vector3(0,1,0) , transform.rotation);
             gameProjectile.GetComponent<ProjectileAnimation>().SetTarget(focus.transform, 15f);
+            
             bool isDead = false;
             focus.TakeDamage(attackDamage, out isDead);
             if(isDead) LoseFocus();
         }
+    }
+
+    void LookAtTarget(){
+        Vector3 direction = focus.transform.position - transform.position;
+        Quaternion rotationToward = Quaternion.LookRotation(direction);
+        transform.rotation = rotationToward;
+        transform.Rotate(-90f,0,0);
     }
 
     void LoseFocus(){
@@ -70,13 +78,13 @@ public class AttackEnemy : MonoBehaviour
         Debug.Log(name + " lost Target");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(focus == null){
             AcquireTarget();
         }
         else if (isInRadius(focus.transform.position)) {
+            LookAtTarget();
             AttackTarget();
         }
         else {
