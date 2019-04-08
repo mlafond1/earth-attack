@@ -661,7 +661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7961e9b9aafc64449e4ef399dd77cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ennemy: {fileID: 1947323793, guid: 01438818a650c8a4e80517f8d469e8cc, type: 3}
+  enemy: {fileID: 1207903751, guid: af15fd3f639391842a9f2c6d118b5f1b, type: 3}
   spawnPoint: {fileID: 699077830}
   timeBetweenWaves: 5
 --- !u!4 &699077830
@@ -671,13 +671,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699077828}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -5.68, y: 3, z: -12.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &736439292
 GameObject:
   m_ObjectHideFlags: 0
