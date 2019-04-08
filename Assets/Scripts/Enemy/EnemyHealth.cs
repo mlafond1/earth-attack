@@ -1,13 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    float health;
+    private float health;
+    public float maxHealth;
+    public Canvas heatlhContainer;
+    public Image healthBar;
+
+    void Start()
+    {
+        if(maxHealth == 0) maxHealth = 100f;
+        health = maxHealth;
+        HealthBarLookAtCamera();
+    }
 
     public void TakeDamage(float damage, out bool isDead){
         health -= damage;
+        healthBar.fillAmount = health/maxHealth;
         isDead = health <= 0;
         if(isDead) Death();
     }
@@ -17,9 +29,10 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Start()
-    {
-        health = 100f;
+    public void HealthBarLookAtCamera(){
+        Vector3 lookOrientation = Camera.main.transform.position;
+        lookOrientation.x = transform.position.x;
+        heatlhContainer.transform.LookAt(lookOrientation);
     }
 
 }

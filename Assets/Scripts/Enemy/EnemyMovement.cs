@@ -50,12 +50,14 @@ public class EnemyMovement : MonoBehaviour
     }
 
     IEnumerator RotateOnPath(float x, float y, float z){
+        EnemyHealth enemyHealth = gameObject.GetComponent<EnemyHealth>();
         float nbOfFrame = 15f;
         float step = 1f/nbOfFrame;
         x *= step; y*=step; z*=step;
         float waitTime = 0.001f;
         for(int i = 0; i < nbOfFrame; ++i){
             transform.Rotate(x,y,z);
+            enemyHealth.HealthBarLookAtCamera();
             yield return new WaitForSecondsRealtime(waitTime);
         }
     }
