@@ -19,15 +19,26 @@ public class MapHelper2 {
     }
 
     public Vector2Int GetIndexesFromCoordinate(Vector3 coordinates){
-        int index_x = Mathf.FloorToInt((coordinates.x + mapCollider.bounds.size.x/2f)/tileDimension_x);
-        int index_z = Mathf.FloorToInt((coordinates.z + mapCollider.bounds.size.z/2f)/tileDimension_z);
+        //int index_x = Mathf.FloorToInt((coordinates.x + mapCollider.bounds.size.x/2f)/tileDimension_x);
+        //int index_z = Mathf.FloorToInt((coordinates.z + mapCollider.bounds.size.z/2f)/tileDimension_z);
+        int index_x = Mathf.FloorToInt((coordinates.x)/tileDimension_x);
+        int index_z = Mathf.FloorToInt((coordinates.z)/tileDimension_z);
         return new Vector2Int(index_x, index_z);
     }
 
     public Vector3 GetCoordinateFromIndexes(Vector2Int indexes){
-        float pos_x = (indexes.x * tileDimension_x) + tileDimension_x/2f - mapCollider.bounds.size.x/2f;
-        float pos_z = (indexes.y * tileDimension_z) + tileDimension_z/2f - mapCollider.bounds.size.z/2f;
+        //float pos_x = (indexes.x * tileDimension_x) + tileDimension_x/2f - mapCollider.bounds.size.x/2f;
+        //float pos_z = (indexes.y * tileDimension_z) + tileDimension_z/2f - mapCollider.bounds.size.z/2f;
+        float pos_x = (indexes.x * tileDimension_x) + tileDimension_x/2f;// - mapCollider.bounds.size.x/2f;
+        float pos_z = (indexes.y * tileDimension_z) + tileDimension_z/2f;// - mapCollider.bounds.size.z/2f;
         return new Vector3(pos_x, mapCollider.bounds.size.y/2f ,pos_z);
+    }
+
+    public bool IndexesInBound(Vector2Int indexes){
+        bool inBound = true;
+        if (indexes.x >= nbTiles || indexes.x < 0 || indexes.y >= nbTiles || indexes.y < 0) 
+            inBound = false;
+        return inBound;
     }
 
     public static void LoadFromTxtFile(string fileName){

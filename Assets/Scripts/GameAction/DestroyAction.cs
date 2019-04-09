@@ -28,6 +28,7 @@ public class DestroyAction : GameAction
         Debug.Log("Collided with " + hit.collider.name + " at " + hit.point);
         // Find index of Tile
         Vector2Int indexes = mapHelper.GetIndexesFromCoordinate(hit.point);
+        if (!mapHelper.IndexesInBound(indexes)) return;
         
         bool[,] tileMap = mapHelper.tiles;
         if(tileMap[indexes.x, indexes.y] && hit.transform.gameObject.GetComponent<AttackEnemy>() != null){ // Tile Occupied

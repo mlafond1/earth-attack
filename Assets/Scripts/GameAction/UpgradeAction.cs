@@ -28,6 +28,7 @@ public class UpgradeAction : GameAction
         Debug.Log("Collided with " + hit.collider.name + " at " + hit.point);
         // Find index of Tile
         Vector2Int indexes = mapHelper.GetIndexesFromCoordinate(hit.point);
+        if (!mapHelper.IndexesInBound(indexes)) return;
         
         bool[,] tileMap = mapHelper.tiles;
         AttackEnemy ae = hit.transform.gameObject.GetComponent<AttackEnemy>();

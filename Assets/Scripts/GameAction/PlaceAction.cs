@@ -31,6 +31,7 @@ public class PlaceAction : GameAction
         Debug.Log("Collided with " + hit.collider.name + " at " + hit.point);
         // Find index of Tile
         Vector2Int indexes = mapHelper.GetIndexesFromCoordinate(hit.point);
+        if (!mapHelper.IndexesInBound(indexes)) return;
         // Find new position with index
         Vector3 pos = mapHelper.GetCoordinateFromIndexes(indexes);
         pos.y = hit.point.y;

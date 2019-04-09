@@ -10,16 +10,17 @@ public class TilePlacer : MonoBehaviour
 
     void Start()
     {
-        SetUpMapFromFile("map1.txt");
+        SetUpMapFromFile("map2.txt");
         Debug.Log("Map size: " + mapHelper.nbTiles+"x"+mapHelper.nbTiles);
     }
     
     public void SetUpMapFromFile(string fileName){
         MapHelper2.LoadFromTxtFile(fileName);
         mapHelper = MapHelper2.GetInstance();
-        mapHelper.ChangeMap(GameObject.Find("flat_map")); // temp
+        //mapHelper.ChangeMap(GameObject.Find("flat_map")); // temp
+        mapHelper.ChangeMap(GameObject.Find("Terrain_playable")); // temp
         //.ChangeMap(GameObject.FindGameObjectWithTag("map"));
-        PlaceTilesOnMap(mapHelper.path);
+        //PlaceTilesOnMap(mapHelper.path);
         FollowPoints.GeneratePathFromIndexes(mapHelper.path, mapHelper);
     }
 

@@ -28,7 +28,7 @@ public class BaseHealth : MonoBehaviour
     
     public void HealthBarLookAtCamera(){
         Vector3 lookOrientation = Camera.main.transform.position;
-        lookOrientation.x = transform.position.x;
+        lookOrientation.z = heatlhContainer.transform.position.z;
         heatlhContainer.transform.LookAt(lookOrientation);
     }
 
