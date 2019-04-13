@@ -5,11 +5,43 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    public Transform enemy;
+    //public Transform enemy;
 
-    public Transform spawnPoint;
+    //public Transform spawnPoint;
+    //
+    private WaveFactory factory;
 
-    public float timeBetweenWaves = 5f;
+    public int timeBetweenWaves = 10;
+
+    private bool countDownStarted = false;
+
+    void Start(){
+        factory = gameObject.GetComponent<WaveFactory>();
+    }
+
+    void FixedUpdate(){
+        if(factory == null) {
+            factory = gameObject.GetComponent<WaveFactory>();
+            return;
+        }
+        if(!factory.hasInitialized) return;
+        if(factory.isSpawningWave) return;
+        if(!factory.hasMoreWaves()) return; // partie gagnée à la mort du derneir ennemi
+        if(!countDownStarted){
+            Debug.Log("Spawning Wave in " + timeBetweenWaves);
+            countDownStarted = true;
+            StartCoroutine(Countdown(timeBetweenWaves));
+        }
+    }
+
+    private IEnumerator Countdown(int nbSeconds){
+        yield return new WaitForSecondsRealtime(nbSeconds);
+        countDownStarted = false;
+        factory.BuildNextWave();
+        yield return new WaitForFixedUpdate();
+    }
+
+    /*public float timeBetweenWaves = 5f;
     private float countdown = 2f;
     private float time = 30f; 
 
@@ -40,5 +72,5 @@ public class SpawnEnemy : MonoBehaviour
     void SpawnAnEnemy()
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-    }
+    }*/
 }

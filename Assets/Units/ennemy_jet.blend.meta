@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 02539cfa3b968744282de194599b2688
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Abs
+    100002: Armature
+    100004: Avant_bras_L
+    100006: Avant_bras_R
+    100008: Avion
+    100010: BezierCircle
+    100012: BezierCurve
+    100014: Bras_L
+    100016: Bras_R
+    100018: Chest
+    100020: Cheville_L
+    100022: Cheville_R
+    100024: Coup
+    100026: Doigts_L
+    100028: Doigts_R
+    100030: //RootNode
+    100032: Jambe_Control_L
+    100034: Jambe_Control_R
+    100036: Jambe_L
+    100038: Jambe_R
+    100040: Main_L
+    100042: Main_R
+    100044: Pied_L
+    100046: Pied_R
+    100048: Poignet_L
+    100050: Poignet_R
+    100052: Pouce_L
+    100054: Pouce_R
+    100056: Tete
+    100058: Tibia_L
+    100060: Tibia_R
+    400000: Abs
+    400002: Armature
+    400004: Avant_bras_L
+    400006: Avant_bras_R
+    400008: Avion
+    400010: BezierCircle
+    400012: BezierCurve
+    400014: Bras_L
+    400016: Bras_R
+    400018: Chest
+    400020: Cheville_L
+    400022: Cheville_R
+    400024: Coup
+    400026: Doigts_L
+    400028: Doigts_R
+    400030: //RootNode
+    400032: Jambe_Control_L
+    400034: Jambe_Control_R
+    400036: Jambe_L
+    400038: Jambe_R
+    400040: Main_L
+    400042: Main_R
+    400044: Pied_L
+    400046: Pied_R
+    400048: Poignet_L
+    400050: Poignet_R
+    400052: Pouce_L
+    400054: Pouce_R
+    400056: Tete
+    400058: Tibia_L
+    400060: Tibia_R
+    2100000: Metal
+    2100002: Motal_Orange
+    2100004: Material_002
+    2100006: Material_003
+    2100008: Vitre
+    2100010: Material_001__astronaut-textures_png
+    2100012: Material__astronaut-textures_png
+    2300000: Avion
+    2300002: BezierCircle
+    3300000: Avion
+    3300002: BezierCircle
+    4300000: Avion
+    4300002: BezierCurve
+    4300004: BezierCircle
+    7400000: Default Take
+    9500000: //RootNode
+    13700000: BezierCurve
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

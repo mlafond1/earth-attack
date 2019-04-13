@@ -48,7 +48,7 @@ public class AttackEnemy : MonoBehaviour
         if(closest != null){
             focus = closest;
             nextAttackTimer = 0;
-            Debug.Log(name + " has acquired Target " + focus);
+            //Debug.Log(name + " has acquired Target " + focus);
         }
     }
 
@@ -56,7 +56,7 @@ public class AttackEnemy : MonoBehaviour
         nextAttackTimer += Time.deltaTime;
         if(nextAttackTimer >= attackRate){
             nextAttackTimer = 0;
-            Debug.Log(name + " is attacking " + focus.name);
+            //Debug.Log(name + " is attacking " + focus.name);
             GameObject gameProjectile = Instantiate(projectile.gameObject, transform.position + new Vector3(0,1,0) , transform.rotation);
             gameProjectile.GetComponent<ProjectileAnimation>().SetTarget(focus.transform, 15f);
             
@@ -75,7 +75,7 @@ public class AttackEnemy : MonoBehaviour
 
     void LoseFocus(){
         focus = null;
-        Debug.Log(name + " lost Target");
+        //Debug.Log(name + " lost Target");
     }
 
     void Update()

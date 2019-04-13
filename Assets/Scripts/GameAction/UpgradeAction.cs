@@ -25,7 +25,7 @@ public class UpgradeAction : GameAction
         RaycastHit hit;
         if (!Physics.Raycast(ray, out hit)) return;
 
-        Debug.Log("Collided with " + hit.collider.name + " at " + hit.point);
+        //Debug.Log("Collided with " + hit.collider.name + " at " + hit.point);
         // Find index of Tile
         Vector2Int indexes = mapHelper.GetIndexesFromCoordinate(hit.point);
         if (!mapHelper.IndexesInBound(indexes)) return;
@@ -34,11 +34,11 @@ public class UpgradeAction : GameAction
         AttackEnemy ae = hit.transform.gameObject.GetComponent<AttackEnemy>();
         bool canUpgrade = true; // Change
         if(tileMap[indexes.x, indexes.y] && ae != null && canUpgrade){ // Tile Occupied
-            Debug.Log("Upgrading at " + indexes);
+            //Debug.Log("Upgrading at " + indexes);
             // Do something
         }
         else { // Tile Open
-            Debug.Log("No object to upgrade here");
+            //Debug.Log("No object to upgrade here");
         }
     }
 

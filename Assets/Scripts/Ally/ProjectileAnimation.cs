@@ -9,10 +9,13 @@ public class ProjectileAnimation : MonoBehaviour
     private bool hasTarget = false;
     private float speed;
 
+    private float acceleration;
+
     public void SetTarget(Transform newTarget, float newSpeed){
         target = newTarget;
         speed = newSpeed;
         hasTarget = true;
+        acceleration = 1;
     }
 
     void Update()
@@ -20,7 +23,8 @@ public class ProjectileAnimation : MonoBehaviour
         if(!hasTarget) return;
         try{
             Vector3 dir = target.position - transform.position;
-            transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+            transform.Translate(dir.normalized * speed * acceleration * Time.deltaTime, Space.World);
+            acceleration += Time.deltaTime * 2;
             if (Vector3.Distance(transform.position, target.position) <= 0.5f) 
                 Destroy(gameObject);
         } catch (MissingReferenceException){

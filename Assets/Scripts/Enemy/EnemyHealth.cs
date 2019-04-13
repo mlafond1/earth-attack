@@ -17,6 +17,11 @@ public class EnemyHealth : MonoBehaviour
         HealthBarLookAtCamera();
     }
 
+    public void SetMaxHealth(float max){
+        maxHealth = max;
+        health = maxHealth;
+    }
+
     public void TakeDamage(float damage, out bool isDead){
         health -= damage;
         healthBar.fillAmount = health/maxHealth;
@@ -25,7 +30,7 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void Death(){
-        Debug.Log(name + " died");
+        //Debug.Log(name + " died");
         Destroy(gameObject);
     }
 

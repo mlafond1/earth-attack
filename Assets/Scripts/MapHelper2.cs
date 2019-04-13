@@ -72,13 +72,13 @@ public class MapHelper2 {
             success = int.TryParse(indexes[0], out x) && int.TryParse(indexes[1], out y);
             if(!success) break;
             instance.path[i] = new Vector2Int(x, y);
-            Debug.Log( i + " : " + instance.path[i]);
+            //Debug.Log( i + " : " + instance.path[i]);
         }
         return success;
     }
 
     public static bool LoadRotations(string linePath){
-        Debug.Log("Rotations\n-----");
+        //Debug.Log("Rotations\n-----");
         instance = GetInstance();
         bool success = true;
         if(instance.path.Length == 0) success = LoadPathFromString(linePath);
@@ -98,9 +98,9 @@ public class MapHelper2 {
             else
                 instance.rotations[i] = -90;
             prevOrientation = nextOrientation;
-            Debug.Log("Rot " + i + ": " + instance.rotations[i]);
+            //Debug.Log("Rot " + i + ": " + instance.rotations[i]);
         }
-        Debug.Log("-----");
+        //Debug.Log("-----");
         return success;
     }
 

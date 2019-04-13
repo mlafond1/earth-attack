@@ -28,7 +28,7 @@ public class PlaceAction : GameAction
         RaycastHit hit;
         if (!Physics.Raycast(ray, out hit)) return;
 
-        Debug.Log("Collided with " + hit.collider.name + " at " + hit.point);
+        //Debug.Log("Collided with " + hit.collider.name + " at " + hit.point);
         // Find index of Tile
         Vector2Int indexes = mapHelper.GetIndexesFromCoordinate(hit.point);
         if (!mapHelper.IndexesInBound(indexes)) return;
@@ -37,13 +37,13 @@ public class PlaceAction : GameAction
         pos.y = hit.point.y;
         bool[,] tileMap = mapHelper.tiles;
         if(tileMap[indexes.x, indexes.y]){ // Tile Occupied
-            Debug.Log("Tile already occupied");
+            //Debug.Log("Tile already occupied");
         }
         else { // Tile Open
             GameObject clone = GameObject.Instantiate(nextStructure, pos, nextStructure.transform.rotation);
             clone.name = nextStructure.name + "" + indexes;
-            Debug.Log("Object is at index " + indexes);
-            Debug.Log("Object now at " + nextStructure.transform.position);
+            //Debug.Log("Object is at index " + indexes);
+            //Debug.Log("Object now at " + nextStructure.transform.position);
             tileMap[indexes.x, indexes.y] = true;
             // Pourrait occasionner un coût en ressource (in game)
             // Remove Selection After usage

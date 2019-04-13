@@ -15,7 +15,7 @@ public class ButtonAction : MonoBehaviour
     }
 
     private void LoadGameAction(){
-        Debug.Log(actionName + " " + associated);
+        //Debug.Log(actionName + " " + associated);
         if(associated != null){
             Object[] args = {associated};
             gameAction = (GameAction)System.Activator.CreateInstance(System.Type.GetType(actionName), args);

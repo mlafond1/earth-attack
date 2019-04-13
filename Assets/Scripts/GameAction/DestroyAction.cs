@@ -25,7 +25,7 @@ public class DestroyAction : GameAction
         RaycastHit hit;
         if (!Physics.Raycast(ray, out hit)) return;
 
-        Debug.Log("Collided with " + hit.collider.name + " at " + hit.point);
+        //Debug.Log("Collided with " + hit.collider.name + " at " + hit.point);
         // Find index of Tile
         Vector2Int indexes = mapHelper.GetIndexesFromCoordinate(hit.point);
         if (!mapHelper.IndexesInBound(indexes)) return;
@@ -33,11 +33,11 @@ public class DestroyAction : GameAction
         bool[,] tileMap = mapHelper.tiles;
         if(tileMap[indexes.x, indexes.y] && hit.transform.gameObject.GetComponent<AttackEnemy>() != null){ // Tile Occupied
             GameObject.Destroy(hit.transform.gameObject);
-            Debug.Log("Object destroyed at " + indexes);
+            //Debug.Log("Object destroyed at " + indexes);
             tileMap[indexes.x, indexes.y] = false;
         }
         else { // Tile Open
-            Debug.Log("No object to destroy here");
+            //Debug.Log("No object to destroy here");
         }
     }
 

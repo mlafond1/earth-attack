@@ -1,236 +1,239 @@
 {
-	"scout": {
-		"description": "Défense de base qui peut tirer autant au sol que dans les airs.",
-		"target": ["ground", "air"],
-		"level": [
-			{
-				"cost": 10,
-				"name": "Scout",
-				"power": 10, "radius": 150, "attackSpeed": 1500, "texture": "scout1",
-				"projectile": "bullet"
-			},
-			{
-				"cost": 15,
-				"name": "Scout Niv. 2",
-				"power": 20, "radius": 172, "attackSpeed": 1500, "texture": "scout2",
-				"projectile": "bullet"
-			},
-			{
-				"cost": 40,
-				"name": "Scout Niv. 3",
-				"power": 35, "radius": 172, "attackSpeed": 1500, "texture": "scout3",
-				"projectile": "bullet"
-			},
-			{
-				"cost": 100,
-				"name": "Scout Niv. 4",
-				"power": 60, "radius": 204, "attackSpeed": 1500, "texture": "scout4",
-				"projectile": "bullet"
-			},
-			{
-				"cost": 150,
-				"name": "Scout Niv. 5",
-				"power": 120, "radius": 500, "attackSpeed": 1500, "texture": "scout5",
-				"projectile": "bullet"
-			}
-		]
-	},
-
-	"laserTower": {
-		"description": "Défense rapide, qui peut tirer au sol et dans les airs.",
-		"target": ["ground", "air"],
-		"level": [
-			{
-				"cost": 30,
-				"name": "Canon laser",
-				"power": 10, "radius": 150, "attackSpeed": 1250, "texture": "laserTower",
-				"projectile": "laser"
-			},
-			{
-				"cost": 45,
-				"name": "Canon laser Niv. 2",
-				"power": 2, "radius": 150, "attackSpeed": 180, "texture": "laserTower2",
-				"projectile": "laser"
-			},
-			{
-				"cost": 90,
-				"name": "Canon laser Niv. 3",
-				"power": 3, "radius": 150, "attackSpeed": 90, "texture": "laserTower3",
-				"projectile": "laser"
-			},
-			{
-				"cost": 150,
-				"name": "Canon laser Niv. 4",
-				"power": 90, "radius": 212, "attackSpeed": 1150, "texture": "laserTower4",
-				"projectile": "laser"
-			},
-			{
-				"cost": 300,
-				"name": "Canon laser Niv. 5",
-				"power": 170, "radius": 276, "attackSpeed": 750, "texture": "laserTower5",
-				"projectile": "laser"
-			}
-		]
-	},
-
-	"petrolGun": {
-		"description": "Défense qui ralenti les ennemies, elle cible les ennemies au sol seulement.",
-		"target": ["ground"],
-		"level": [
-			{
-				"cost": 30,
-				"name": "Canon à pétrol",
-				"power": 25, "radius": 130, "attackSpeed": 1750, "texture": "petrolGun",
-				"projectile": "petrolBall"
-			},
-			{
-				"cost": 50,
-				"name": "Canon à pétrol nv.2",
-				"power": 50, "radius": 130, "attackSpeed": 1750, "texture": "petrolGun2",
-				"projectile": "petrolBall"
-			},
-			{
-				"cost": 75,
-				"name": "Canon à pétrol nv.3",
-				"power": 75, "radius": 160, "attackSpeed": 1750, "texture": "petrolGun3",
-				"projectile": "petrolBall"
-			},
-			{
-				"cost": 150,
-				"name": "Canon à pétrol nv.4",
-				"power": 125, "radius": 250, "attackSpeed": 1200, "texture": "petrolGun4",
-				"projectile": "petrolBall"
-			}
-		]
-	},
-
-	"antiAir": {
-		"description": "Défense anti-airérienne qui ne peut tirer que sur les ennemies aériens.",
-		"target": ["air"],
-		"level": [
-			{
-				"cost": 40,
-				"name": "Anti-Air",
-				"power": 40, "radius": 200, "attackSpeed": 1150, "texture": "antiAir1",
-				"projectile": "missile"
-			},
-			{
-				"cost": 80,
-				"name": "Anti-Air nv.2",
-				"power": 75, "radius": 220, "attackSpeed": 1150, "texture": "antiAir2",
-				"projectile": "missile"
-			},
-			{
-				"cost": 130,
-				"name": "Anti-Air nv.3",
-				"power": 100, "radius": 250, "attackSpeed": 1000, "texture": "antiAir3",
-				"projectile": "missile"
-			},
-			{
-				"cost": 150,
-				"name": "Anti-Air nv.4",
-				"power": 155, "radius": 250, "attackSpeed": 875, "texture": "antiAir4",
-				"projectile": "missile"
-			},
-			{
-				"cost": 300,
-				"name": "Anti-Air nv.5",
-				"power": 215, "radius": 400, "attackSpeed": 675, "texture": "antiAir5",
-				"projectile": "missile"
-			}
-		]
-	},
-
-	"hammer": {
-		"description": "Défense avec une petite portée de frappe mais qui peut frapper tous les ennemies à proximité en même temps.",
-		"target": ["ground"],
-		"level": [
-			{
-				"cost": 50,
-				"name": "Marteau",
-				"power": 30, "radius": 128, "attackSpeed": 2000, "texture": "hammer1",
-				"projectile": "arcWave"
-			},
-			{
-				"cost": 75,
-				"name": "Marteau nv.2",
-				"power": 45, "radius": 128, "attackSpeed": 2000, "texture": "hammer2",
-				"projectile": "arcWave"
-			},
-			{
-				"cost": 95,
-				"name": "Marteau nv.3",
-				"power": 60, "radius": 128, "attackSpeed": 2000, "texture": "hammer3",
-				"projectile": "arcWave"
-			},
-			{
-				"cost": 120,
-				"name": "Marteau nv.4",
-				"power": 100, "radius": 128, "attackSpeed": 2000, "texture": "hammer4",
-				"projectile": "arcWave"
-			},
-			{
-				"cost": 140,
-				"name": "Marteau nv.5",
-				"power": 130, "radius": 192, "attackSpeed": 1250, "texture": "hammer5",
-				"projectile": "arcWave"
-			}
-		]
-	},
-
-	"bombTower": {
-		"description": "Défense puissante qui à une très longue portée et qui fait du dégât large qui peut toucher plusieurs ennemies à la fois.",
-		"target": ["ground"],
-		"level": [
-			{
-				"cost": 60,
-				"name": "Tour à bomb",
-				"power": 50, "radius": 225, "attackSpeed": 3000, "texture": "bombTower1",
-				"projectile": "bomb"
-			},
-			{
-				"cost": 45,
-				"name": "Tour à bomb nv.2",
-				"power": 65, "radius": 250, "attackSpeed": 2500, "texture": "bombTower2",
-				"projectile": "bomb"
-			},
-			{
-				"cost": 75,
-				"name": "Tour à bomb nv.3",
-				"power": 85, "radius": 350, "attackSpeed": 2500, "texture": "bombTower3",
-				"projectile": "bomb"
-			},
-			{
-				"cost": 100,
-				"name": "Tour à bomb nv.4",
-				"power": 115, "radius": 450, "attackSpeed": 2500, "texture": "bombTower4",
-				"projectile": "bomb"
-			},
-			{
-				"cost": 140,
-				"name": "Tour à bomb nv.5",
-				"power": 145, "radius": 750, "attackSpeed": 2000, "texture": "bombTower5",
-				"projectile": "bomb"
-			}
-		]
-	},
-
-	"nuke": {
-		"description": "Défense ultime, le lance missile nucléaire est la plus forte de toutes les défenses, son missile fait du dégât large.",
-		"target": ["ground", "air"],
-		"level": [
-			{
-				"cost": 1000,
-				"name": "Nucléaire",
-				"power": 1500, "radius": 10000, "attackSpeed": 5000, "texture": "nuke",
-				"projectile": "bigMissile"
-			},
-			{
-				"cost": 2000,
-				"name": "Ultime Nucléaire",
-				"power": 6000, "radius": 10000, "attackSpeed": 6000, "texture": "nuke2",
-				"projectile": "bigMissile"
-			}
-		]
-	}
+	"towers": [
+		{
+			"name": "scout",
+			"description": "Défense de base qui peut tirer autant au sol que dans les airs.",
+			"target": ["ground", "air"],
+			"level": [
+				{
+					"cost": 10,
+					"name": "Scout",
+					"power": 10, "radius": 150, "attackSpeed": 1500, "texture": "scout1",
+					"projectile": "bullet"
+				},
+				{
+					"cost": 15,
+					"name": "Scout Niv. 2",
+					"power": 20, "radius": 172, "attackSpeed": 1500, "texture": "scout2",
+					"projectile": "bullet"
+				},
+				{
+					"cost": 40,
+					"name": "Scout Niv. 3",
+					"power": 35, "radius": 172, "attackSpeed": 1500, "texture": "scout3",
+					"projectile": "bullet"
+				},
+				{
+					"cost": 100,
+					"name": "Scout Niv. 4",
+					"power": 60, "radius": 204, "attackSpeed": 1500, "texture": "scout4",
+					"projectile": "bullet"
+				},
+				{
+					"cost": 150,
+					"name": "Scout Niv. 5",
+					"power": 120, "radius": 500, "attackSpeed": 1500, "texture": "scout5",
+					"projectile": "bullet"
+				}
+			]
+		},
+		{
+			"name": "laserTower",
+			"description": "Défense rapide, qui peut tirer au sol et dans les airs.",
+			"target": ["ground", "air"],
+			"level": [
+				{
+					"cost": 30,
+					"name": "Canon laser",
+					"power": 10, "radius": 150, "attackSpeed": 1250, "texture": "laserTower",
+					"projectile": "laser"
+				},
+				{
+					"cost": 45,
+					"name": "Canon laser Niv. 2",
+					"power": 2, "radius": 150, "attackSpeed": 180, "texture": "laserTower2",
+					"projectile": "laser"
+				},
+				{
+					"cost": 90,
+					"name": "Canon laser Niv. 3",
+					"power": 3, "radius": 150, "attackSpeed": 90, "texture": "laserTower3",
+					"projectile": "laser"
+				},
+				{
+					"cost": 150,
+					"name": "Canon laser Niv. 4",
+					"power": 90, "radius": 212, "attackSpeed": 1150, "texture": "laserTower4",
+					"projectile": "laser"
+				},
+				{
+					"cost": 300,
+					"name": "Canon laser Niv. 5",
+					"power": 170, "radius": 276, "attackSpeed": 750, "texture": "laserTower5",
+					"projectile": "laser"
+				}
+			]
+		},
+		{
+			"name" : "petrolGun",
+			"description": "Défense qui ralenti les ennemies, elle cible les ennemies au sol seulement.",
+			"target": ["ground"],
+			"level": [
+				{
+					"cost": 30,
+					"name": "Canon à pétrol",
+					"power": 25, "radius": 130, "attackSpeed": 1750, "texture": "petrolGun",
+					"projectile": "petrolBall"
+				},
+				{
+					"cost": 50,
+					"name": "Canon à pétrol nv.2",
+					"power": 50, "radius": 130, "attackSpeed": 1750, "texture": "petrolGun2",
+					"projectile": "petrolBall"
+				},
+				{
+					"cost": 75,
+					"name": "Canon à pétrol nv.3",
+					"power": 75, "radius": 160, "attackSpeed": 1750, "texture": "petrolGun3",
+					"projectile": "petrolBall"
+				},
+				{
+					"cost": 150,
+					"name": "Canon à pétrol nv.4",
+					"power": 125, "radius": 250, "attackSpeed": 1200, "texture": "petrolGun4",
+					"projectile": "petrolBall"
+				}
+			]
+		},
+		{
+			"name": "antiAir",
+			"description": "Défense anti-airérienne qui ne peut tirer que sur les ennemies aériens.",
+			"target": ["air"],
+			"level": [
+				{
+					"cost": 40,
+					"name": "Anti-Air",
+					"power": 40, "radius": 200, "attackSpeed": 1150, "texture": "antiAir1",
+					"projectile": "missile"
+				},
+				{
+					"cost": 80,
+					"name": "Anti-Air nv.2",
+					"power": 75, "radius": 220, "attackSpeed": 1150, "texture": "antiAir2",
+					"projectile": "missile"
+				},
+				{
+					"cost": 130,
+					"name": "Anti-Air nv.3",
+					"power": 100, "radius": 250, "attackSpeed": 1000, "texture": "antiAir3",
+					"projectile": "missile"
+				},
+				{
+					"cost": 150,
+					"name": "Anti-Air nv.4",
+					"power": 155, "radius": 250, "attackSpeed": 875, "texture": "antiAir4",
+					"projectile": "missile"
+				},
+				{
+					"cost": 300,
+					"name": "Anti-Air nv.5",
+					"power": 215, "radius": 400, "attackSpeed": 675, "texture": "antiAir5",
+					"projectile": "missile"
+				}
+			]
+		},
+		{
+			"name": "hammer",
+			"description": "Défense avec une petite portée de frappe mais qui peut frapper tous les ennemies à proximité en même temps.",
+			"target": ["ground"],
+			"level": [
+				{
+					"cost": 50,
+					"name": "Marteau",
+					"power": 30, "radius": 128, "attackSpeed": 2000, "texture": "hammer1",
+					"projectile": "arcWave"
+				},
+				{
+					"cost": 75,
+					"name": "Marteau nv.2",
+					"power": 45, "radius": 128, "attackSpeed": 2000, "texture": "hammer2",
+					"projectile": "arcWave"
+				},
+				{
+					"cost": 95,
+					"name": "Marteau nv.3",
+					"power": 60, "radius": 128, "attackSpeed": 2000, "texture": "hammer3",
+					"projectile": "arcWave"
+				},
+				{
+					"cost": 120,
+					"name": "Marteau nv.4",
+					"power": 100, "radius": 128, "attackSpeed": 2000, "texture": "hammer4",
+					"projectile": "arcWave"
+				},
+				{
+					"cost": 140,
+					"name": "Marteau nv.5",
+					"power": 130, "radius": 192, "attackSpeed": 1250, "texture": "hammer5",
+					"projectile": "arcWave"
+				}
+			]
+		},
+		{
+			"name": "bombTower",
+			"description": "Défense puissante qui à une très longue portée et qui fait du dégât large qui peut toucher plusieurs ennemies à la fois.",
+			"target": ["ground"],
+			"level": [
+				{
+					"cost": 60,
+					"name": "Tour à bomb",
+					"power": 50, "radius": 225, "attackSpeed": 3000, "texture": "bombTower1",
+					"projectile": "bomb"
+				},
+				{
+					"cost": 45,
+					"name": "Tour à bomb nv.2",
+					"power": 65, "radius": 250, "attackSpeed": 2500, "texture": "bombTower2",
+					"projectile": "bomb"
+				},
+				{
+					"cost": 75,
+					"name": "Tour à bomb nv.3",
+					"power": 85, "radius": 350, "attackSpeed": 2500, "texture": "bombTower3",
+					"projectile": "bomb"
+				},
+				{
+					"cost": 100,
+					"name": "Tour à bomb nv.4",
+					"power": 115, "radius": 450, "attackSpeed": 2500, "texture": "bombTower4",
+					"projectile": "bomb"
+				},
+				{
+					"cost": 140,
+					"name": "Tour à bomb nv.5",
+					"power": 145, "radius": 750, "attackSpeed": 2000, "texture": "bombTower5",
+					"projectile": "bomb"
+				}
+			]
+		},
+		{
+			"name": "nuke",
+			"description": "Défense ultime, le lance missile nucléaire est la plus forte de toutes les défenses, son missile fait du dégât large.",
+			"target": ["ground", "air"],
+			"level": [
+				{
+					"cost": 1000,
+					"name": "Nucléaire",
+					"power": 1500, "radius": 10000, "attackSpeed": 5000, "texture": "nuke",
+					"projectile": "bigMissile"
+				},
+				{
+					"cost": 2000,
+					"name": "Ultime Nucléaire",
+					"power": 6000, "radius": 10000, "attackSpeed": 6000, "texture": "nuke2",
+					"projectile": "bigMissile"
+				}
+			]
+		}
+	]
 }
