@@ -245,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   associated: {fileID: 257010797, guid: 944f13c39912723438b4c6ab7a77692a, type: 3}
   actionName: SelectAction
+  towerName: scout
 --- !u!1 &19091436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,6 +1739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   associated: {fileID: 0}
   actionName: DestroyAction
+  towerName: 
 --- !u!1 &943942761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,6 +1952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   associated: {fileID: 0}
   actionName: UpgradeAction
+  towerName: 
 --- !u!1001 &964892750
 PrefabInstance:
   m_ObjectHideFlags: 0

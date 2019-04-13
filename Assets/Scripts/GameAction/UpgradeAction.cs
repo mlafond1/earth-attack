@@ -32,10 +32,16 @@ public class UpgradeAction : GameAction
         
         bool[,] tileMap = mapHelper.tiles;
         AttackEnemy ae = hit.transform.gameObject.GetComponent<AttackEnemy>();
-        bool canUpgrade = true; // Change
-        if(tileMap[indexes.x, indexes.y] && ae != null && canUpgrade){ // Tile Occupied
-            //Debug.Log("Upgrading at " + indexes);
-            // Do something
+        if(tileMap[indexes.x, indexes.y] && ae != null){ // Tile Occupied
+            TowerFactory factory = TowerFactory.GetInstance();
+            GameObject upgradedTower = factory.Build(ae.towerName, ae.upgradeIndex);
+            if(upgradedTower == null) return;
+            Debug.Log("Upgrading at " + indexes);
+            // Upgrade
+            Vector3 position = ae.transform.position;
+            Quaternion rotation = ae.transform.rotation;
+            GameObject.Destroy(ae.gameObject);
+            GameObject.Instantiate(upgradedTower, position, rotation);
         }
         else { // Tile Open
             //Debug.Log("No object to upgrade here");

@@ -21,10 +21,13 @@ public class EnemyFactory {
         // SetHp
         EnemyHealth health = prefab.GetComponent<EnemyHealth>();
         health.SetMaxHealth(enemyJson.hp);
+        health.value = enemyJson.value;
+        health.attribute = EnemyAttribute.NONE;
+        System.Enum.TryParse(enemyJson.attribute.ToUpper(), out health.attribute);
         // SetSpeed
         EnemyMovement movement = prefab.GetComponent<EnemyMovement>();
         movement.speed = enemyJson.speed;
-        // TODO SetValue
+        
         return prefab;
     } 
 

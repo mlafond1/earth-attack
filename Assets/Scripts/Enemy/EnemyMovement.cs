@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 target;
     private int pointIndex = 0;
     private bool hasTarget = false;
+    private bool stopSignal = false;
     void Start()
     {
         if(FollowPoints.isReady){
@@ -17,8 +18,13 @@ public class EnemyMovement : MonoBehaviour
         transform.Rotate(90,0,0); // Depends on the enemy
     }
 
+    public void SendStopSignal(){
+        stopSignal = true;
+    }
+
     void Update()
     {
+        if(stopSignal) return;
         if(!hasTarget){
             if(!FollowPoints.isReady) return;
             target = FollowPoints.points[0];
@@ -56,6 +62,7 @@ public class EnemyMovement : MonoBehaviour
         x *= step; y*=step; z*=step;
         float waitTime = 0.001f;
         for(int i = 0; i < nbOfFrame; ++i){
+            if(stopSignal) break;
             transform.Rotate(x,y,z);
             enemyHealth.HealthBarLookAtCamera();
             yield return new WaitForSecondsRealtime(waitTime);

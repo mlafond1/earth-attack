@@ -4,28 +4,32 @@ using UnityEngine;
 
 public class AttackEnemy : MonoBehaviour
 {
-
-    float attackRange;
-    float attackDamage;
-    float attackRate;
-    float nextAttackTimer;
+    public float cost = 10f;
+    public string towerName = "scout";
+    public string description = "unité de base";
+    public float power = 10f;
+    public float radius = 10f;
+    public float attackSpeed = 250f; // 1000 = 1 sec
+    public List<EnemyAttribute> targetedAttributes = new List<EnemyAttribute>();
+    public int upgradeIndex = 1;
+    private float nextAttackTimer;
     Vector3 position;
     EnemyHealth focus;
-    public Transform projectile;
+    public GameObject projectile;
 
-    // Start is called before the first frame update
     void Start()
     {
-        attackRange = 10f;
-        attackDamage = 10f;
-        attackRate = 0.25f;  // 1 = 1 sec
+        if(targetedAttributes.Count == 0) {
+            targetedAttributes.Add(EnemyAttribute.GROUND);
+            targetedAttributes.Add(EnemyAttribute.AIR);
+        }
         nextAttackTimer = 0f;
         position = transform.position;
     }
 
     bool isInRadius(Vector3 positionEnemy, out float distance){
         distance = Vector3.Distance(position, positionEnemy);
-        return distance <= attackRange;
+        return distance <= radius;
     }
     bool isInRadius(Vector3 positionEnemy){
         float distance = 0f;
@@ -39,6 +43,8 @@ public class AttackEnemy : MonoBehaviour
         foreach (EnemyHealth enemyHealth in enemyHealths) {
             float distance = 0;
             if(isInRadius(enemyHealth.transform.position, out distance)){
+                if(!targetedAttributes.Contains(enemyHealth.attribute)) 
+                    continue;
                 if(distance < closestDistance){
                     closestDistance = distance;
                     closest = enemyHealth;
@@ -47,21 +53,20 @@ public class AttackEnemy : MonoBehaviour
         }
         if(closest != null){
             focus = closest;
-            nextAttackTimer = 0;
+            //nextAttackTimer = 0; // Reset
             //Debug.Log(name + " has acquired Target " + focus);
         }
     }
 
     void AttackTarget(){
-        nextAttackTimer += Time.deltaTime;
-        if(nextAttackTimer >= attackRate){
+        if(nextAttackTimer >= attackSpeed){
             nextAttackTimer = 0;
             //Debug.Log(name + " is attacking " + focus.name);
-            GameObject gameProjectile = Instantiate(projectile.gameObject, transform.position + new Vector3(0,1,0) , transform.rotation);
+            GameObject gameProjectile = Instantiate(projectile, transform.position + new Vector3(0,1,0) , transform.rotation);
             gameProjectile.GetComponent<ProjectileAnimation>().SetTarget(focus.transform, 15f);
             
             bool isDead = false;
-            focus.TakeDamage(attackDamage, out isDead);
+            focus.TakeDamage(power, out isDead);
             if(isDead) LoseFocus();
         }
     }
@@ -80,6 +85,7 @@ public class AttackEnemy : MonoBehaviour
 
     void Update()
     {
+        if(nextAttackTimer < attackSpeed) nextAttackTimer += Time.deltaTime*1000;
         if(focus == null){
             AcquireTarget();
         }

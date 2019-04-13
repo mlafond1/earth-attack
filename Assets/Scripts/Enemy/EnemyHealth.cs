@@ -7,13 +7,17 @@ public class EnemyHealth : MonoBehaviour
 {
     private float health;
     public float maxHealth;
+    public float value;
+    public EnemyAttribute attribute = EnemyAttribute.NONE;
     public Canvas heatlhContainer;
     public Image healthBar;
 
     void Start()
     {
         if(maxHealth == 0) maxHealth = 100f;
+        if(attribute == EnemyAttribute.NONE) attribute = EnemyAttribute.GROUND;
         health = maxHealth;
+        value = 0;
         HealthBarLookAtCamera();
     }
 
@@ -31,7 +35,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void Death(){
         //Debug.Log(name + " died");
-        Destroy(gameObject);
+        gameObject.GetComponent<EnemyMovement>().SendStopSignal();
+        Destroy(gameObject, 1);
     }
 
     public void HealthBarLookAtCamera(){

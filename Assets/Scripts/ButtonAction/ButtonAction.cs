@@ -6,8 +6,8 @@ public class ButtonAction : MonoBehaviour
 {
 
     GameAction gameAction;
-    public Transform associated = null;
     public string actionName;
+    public string towerName;
 
     void Start(){
         LoadGameAction();
@@ -15,9 +15,11 @@ public class ButtonAction : MonoBehaviour
     }
 
     private void LoadGameAction(){
-        //Debug.Log(actionName + " " + associated);
-        if(associated != null){
-            Object[] args = {associated};
+        //Debug.Log(actionName + " " + towerName);
+        if(towerName != ""){
+            //Debug.Log(towerName + " selected");
+            TowerFactory factory = TowerFactory.GetInstance();
+            Object[] args = {factory.Build(towerName).transform};
             gameAction = (GameAction)System.Activator.CreateInstance(System.Type.GetType(actionName), args);
         }
         else {
