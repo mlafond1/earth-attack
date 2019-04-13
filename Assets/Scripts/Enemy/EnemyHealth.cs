@@ -35,6 +35,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Death(){
         //Debug.Log(name + " died");
+        RessourceManager.GetInstance().Add(value);
         gameObject.GetComponent<EnemyMovement>().SendStopSignal();
         Destroy(gameObject, 1);
     }

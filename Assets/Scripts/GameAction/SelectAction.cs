@@ -5,16 +5,16 @@ using UnityEngine;
 public class SelectAction : GameAction
 {
 
-    public Transform selectedObject;
+    public string towerName;
 
-    public SelectAction(Transform selectedObject){
-        this.selectedObject = selectedObject;
+    public SelectAction(string towerName){
+        this.towerName = towerName;
     }
 
-    public SelectAction(){}
+    public SelectAction(){} // Needed for the reflection in ButtonAction
 
     override public void Execute(){
-        ActionPlayer.SetNextAction(new PlaceAction(selectedObject.gameObject));
+        ActionPlayer.SetNextAction(new PlaceAction(towerName));
     }
 
 }

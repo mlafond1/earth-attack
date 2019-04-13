@@ -36,8 +36,11 @@ public class UpgradeAction : GameAction
             TowerFactory factory = TowerFactory.GetInstance();
             GameObject upgradedTower = factory.Build(ae.towerName, ae.upgradeIndex);
             if(upgradedTower == null) return;
-            Debug.Log("Upgrading at " + indexes);
+            //Debug.Log("Upgrading at " + indexes);
             // Upgrade
+            RessourceManager ressourceManager = RessourceManager.GetInstance();
+            AttackEnemy uae = upgradedTower.GetComponent<AttackEnemy>();
+            if(!ressourceManager.Spend(uae.cost)) return;
             Vector3 position = ae.transform.position;
             Quaternion rotation = ae.transform.rotation;
             GameObject.Destroy(ae.gameObject);

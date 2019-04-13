@@ -29,7 +29,7 @@ public class AttackEnemy : MonoBehaviour
 
     bool isInRadius(Vector3 positionEnemy, out float distance){
         distance = Vector3.Distance(position, positionEnemy);
-        return distance <= radius;
+        return distance <= radius/15;
     }
     bool isInRadius(Vector3 positionEnemy){
         float distance = 0f;

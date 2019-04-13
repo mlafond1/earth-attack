@@ -13,12 +13,14 @@ public class BaseHealth : MonoBehaviour
     {
         if(maxHealth == 0) maxHealth = 15;
         health = maxHealth;
+        heatlhContainer.GetComponentInChildren<Text>().text = health + " / " + maxHealth;
         HealthBarLookAtCamera();
     }
 
     public void TakeDamage(){
         --health;
         healthBar.fillAmount = (float)health/maxHealth;
+        heatlhContainer.GetComponentInChildren<Text>().text = health + " / " + maxHealth;
         if(health == 0) Death();
     }
 
@@ -30,6 +32,7 @@ public class BaseHealth : MonoBehaviour
         Vector3 lookOrientation = Camera.main.transform.position;
         lookOrientation.z = heatlhContainer.transform.position.z;
         heatlhContainer.transform.LookAt(lookOrientation);
+        heatlhContainer.transform.Rotate(180,0,0);
     }
 
 }

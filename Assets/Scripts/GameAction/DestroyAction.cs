@@ -31,7 +31,10 @@ public class DestroyAction : GameAction
         if (!mapHelper.IndexesInBound(indexes)) return;
         
         bool[,] tileMap = mapHelper.tiles;
-        if(tileMap[indexes.x, indexes.y] && hit.transform.gameObject.GetComponent<AttackEnemy>() != null){ // Tile Occupied
+        AttackEnemy ae = hit.transform.gameObject.GetComponent<AttackEnemy>();
+        if(tileMap[indexes.x, indexes.y] && ae != null){ // Tile Occupied
+            RessourceManager ressourceManager = RessourceManager.GetInstance();
+            ressourceManager.Add((int)System.Math.Floor(ae.cost/4f));
             GameObject.Destroy(hit.transform.gameObject);
             //Debug.Log("Object destroyed at " + indexes);
             tileMap[indexes.x, indexes.y] = false;

@@ -8,9 +8,11 @@ public class PlaceAction : GameAction
     GameObject nextStructure;
     MapHelper2 mapHelper;
 
-    public PlaceAction(GameObject nextStructure){
-        this.nextStructure = nextStructure;
+    public PlaceAction(string towerName){
         mapHelper = MapHelper2.GetInstance();
+        TowerFactory factory = TowerFactory.GetInstance();
+        this.nextStructure = factory.Build(towerName);
+        if(this.nextStructure == null) CancelAction();
     }
 
     override public void Execute(){
@@ -40,14 +42,12 @@ public class PlaceAction : GameAction
             //Debug.Log("Tile already occupied");
         }
         else { // Tile Open
+            RessourceManager ressourceManager = RessourceManager.GetInstance();
+            AttackEnemy ae = nextStructure.GetComponent<AttackEnemy>();
+            if(!ressourceManager.Spend(ae.cost)) return;
             GameObject clone = GameObject.Instantiate(nextStructure, pos, nextStructure.transform.rotation);
             clone.name = nextStructure.name + "" + indexes;
-            //Debug.Log("Object is at index " + indexes);
-            //Debug.Log("Object now at " + nextStructure.transform.position);
             tileMap[indexes.x, indexes.y] = true;
-            // Pourrait occasionner un coût en ressource (in game)
-            // Remove Selection After usage
-            // nextStructure = null;
         }
         
     }

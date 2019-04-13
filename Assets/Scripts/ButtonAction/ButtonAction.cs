@@ -17,9 +17,7 @@ public class ButtonAction : MonoBehaviour
     private void LoadGameAction(){
         //Debug.Log(actionName + " " + towerName);
         if(towerName != ""){
-            //Debug.Log(towerName + " selected");
-            TowerFactory factory = TowerFactory.GetInstance();
-            Object[] args = {factory.Build(towerName).transform};
+            System.Object[] args = {towerName};
             gameAction = (GameAction)System.Activator.CreateInstance(System.Type.GetType(actionName), args);
         }
         else {
