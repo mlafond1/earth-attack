@@ -48,8 +48,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100010, guid: 02539cfa3b968744282de194599b2688, type: 3}
-  - {fileID: 2100012, guid: 02539cfa3b968744282de194599b2688, type: 3}
+  - {fileID: 2100000, guid: 4fe254595be4eba4db14eab0a8f4def8, type: 2}
+  - {fileID: 2100000, guid: 4fe254595be4eba4db14eab0a8f4def8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -797,6 +797,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  value: 0
+  attribute: 0
   heatlhContainer: {fileID: 1916271628164255782}
   healthBar: {fileID: 7629189721550040976}
 --- !u!1 &5394584723927054629

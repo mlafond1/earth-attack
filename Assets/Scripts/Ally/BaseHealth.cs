@@ -20,7 +20,7 @@ public class BaseHealth : MonoBehaviour
     public void TakeDamage(){
         --health;
         healthBar.fillAmount = (float)health/maxHealth;
-        heatlhContainer.GetComponentInChildren<Text>().text = health + " / " + maxHealth;
+        heatlhContainer.GetComponentInChildren<Text>().text = (health > 0 ? health : 0) + " / " + maxHealth;
         if(health == 0) Death();
     }
 
