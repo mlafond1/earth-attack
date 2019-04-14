@@ -14,12 +14,14 @@ public class SpawnEnemy : MonoBehaviour
     public int timeBetweenWaves = 10;
 
     private bool countDownStarted = false;
+    private bool stopSignal = false;
 
     void Start(){
         factory = gameObject.GetComponent<WaveFactory>();
     }
 
     void FixedUpdate(){
+        if(stopSignal) return;
         if(factory == null) {
             factory = gameObject.GetComponent<WaveFactory>();
             return;
@@ -39,6 +41,12 @@ public class SpawnEnemy : MonoBehaviour
         countDownStarted = false;
         factory.BuildNextWave();
         yield return new WaitForFixedUpdate();
+    }
+
+    public void StopSpawning(){
+        stopSignal = true;
+        StopAllCoroutines();
+        factory.StopSpawning();
     }
 
     /*public float timeBetweenWaves = 5f;
