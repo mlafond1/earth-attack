@@ -11,7 +11,7 @@ public class TowerFactory : MonoBehaviour {
     private GameObject lastBuilt;
     
     void Start(){
-        this.towers = LoadData.LoadTowers("Json/defenses.json").towers;
+        this.towers = LoadData.LoadTowers("Json/defenses").towers;
         if(textureToModel == null) LoadTextureToModel();
         instance = this;
     }
@@ -47,7 +47,8 @@ public class TowerFactory : MonoBehaviour {
     } 
 
     public GameObject Build(string name){
-        if(lastBuilt == null || lastBuilt.GetComponent<AttackEnemy>().towerName != name)
+        AttackEnemy ae = lastBuilt?.GetComponent<AttackEnemy>();
+        if(lastBuilt == null || ae.towerName != name || ae.upgradeIndex != 0)
             lastBuilt = Build(name, 0);
         return lastBuilt;
     } 

@@ -11,7 +11,7 @@ public class WaveFactory : MonoBehaviour {
     public bool isSpawningWave {get; private set;} = false;
 
     void Start(){
-        LoadData.JsonWaves jw = LoadData.LoadWaves("Json/ennemyWaves.json");
+        LoadData.JsonWaves jw = LoadData.LoadWaves("Json/ennemyWaves");
         factory = new EnemyFactory(jw.ennemies);
         waves = jw.waves;
         hasInitialized = true;

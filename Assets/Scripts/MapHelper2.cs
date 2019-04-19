@@ -43,7 +43,7 @@ public class MapHelper2 {
 
     public static void LoadFromTxtFile(string fileName){
         instance = GetInstance();
-        string[] lines = System.IO.File.ReadAllLines(@fileName);
+        string[] lines = Resources.Load<TextAsset>(@fileName).text.Split('\n');
         int nb = 0;
         bool success = int.TryParse(lines[0], out nb) && 
                        LoadPathFromString(lines[1]) && 
@@ -52,7 +52,7 @@ public class MapHelper2 {
         if (!success) return;
         instance.tiles = new bool[instance.nbTiles,instance.nbTiles];
         for(int line = 2; line < lines.Length; ++line){
-            for(int col = 0; col < lines[line].Length; ++col){
+            for(int col = 0; col < instance.nbTiles; ++col){
                 char c = lines[line][col];
                 if(c != ' '){
                     instance.tiles[line-2, col] = true;

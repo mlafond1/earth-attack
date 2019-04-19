@@ -6,11 +6,11 @@ public class LoadData
 {
     
     public static JsonWaves LoadWaves(string filename){
-        return JsonUtility.FromJson<JsonWaves>(System.IO.File.ReadAllText(@filename));
+        return JsonUtility.FromJson<JsonWaves>(Resources.Load<TextAsset>(@filename).text);
     }
 
     public static JsonDefenses LoadTowers(string filename){
-        return JsonUtility.FromJson<JsonDefenses>(System.IO.File.ReadAllText(@filename));
+        return JsonUtility.FromJson<JsonDefenses>(Resources.Load<TextAsset>(@filename).text);
     }
 
     [System.Serializable]

@@ -10,7 +10,7 @@ public class TilePlacer : MonoBehaviour
 
     void Start()
     {
-        SetUpMapFromFile("map2.txt");
+        SetUpMapFromFile("map2");
         Debug.Log("Map size: " + mapHelper.nbTiles+"x"+mapHelper.nbTiles);
     }
     
