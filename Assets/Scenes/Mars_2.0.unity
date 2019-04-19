@@ -307,7 +307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45, y: 125.7}
+  m_AnchoredPosition: {x: -45, y: 120.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7897858
@@ -403,6 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: SelectAction
   towerName: scout
+  isHovered: 0
 --- !u!1 &19091436
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,6 +876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: SelectAction
   towerName: bombTower
+  isHovered: 0
 --- !u!114 &139114216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1597,6 +1599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: SelectAction
   towerName: hammer
+  isHovered: 0
 --- !u!114 &316348293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1926,6 +1929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: QuitAction
   towerName: 
+  isHovered: 0
 --- !u!114 &499606707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2111,7 +2115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45, y: 80.6}
+  m_AnchoredPosition: {x: -45, y: 76.1}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559381350
@@ -2128,6 +2132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: SelectAction
   towerName: laserTower
+  isHovered: 0
 --- !u!114 &559381351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2926,6 +2931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: DestroyAction
   towerName: 
+  isHovered: 0
 --- !u!1 &915240760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,7 +2969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45, y: 34.4}
+  m_AnchoredPosition: {x: -45, y: 31}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &915240762
@@ -2980,6 +2986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: SelectAction
   towerName: petrolGun
+  isHovered: 0
 --- !u!114 &915240763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3175,7 +3182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45, y: -218}
+  m_AnchoredPosition: {x: -45, y: -228}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956712453
@@ -3269,8 +3276,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6955561725d96c49aadadc46fd4d6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: UpgradeAction
+  actionName: PreUpgradeAction
   towerName: 
+  isHovered: 0
 --- !u!1 &961473626
 GameObject:
   m_ObjectHideFlags: 0
@@ -4091,7 +4099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacd9977d31c7cb43b582c7faf733e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingRessources: 100
+  startingRessources: 0
   ressources: 0
 --- !u!114 &1184768201
 MonoBehaviour:
@@ -4327,6 +4335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: ReplayAction
   towerName: 
+  isHovered: 0
 --- !u!114 &1238763252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4912,6 +4921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: SelectAction
   towerName: nuke
+  isHovered: 0
 --- !u!114 &1394501904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5028,7 +5038,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45, y: -12}
+  m_AnchoredPosition: {x: -45, y: -13}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1423721025
@@ -5045,6 +5055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: SelectAction
   towerName: antiAir
+  isHovered: 0
 --- !u!114 &1423721026
 MonoBehaviour:
   m_ObjectHideFlags: 0

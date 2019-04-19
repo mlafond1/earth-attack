@@ -7,6 +7,8 @@ public class TowerFactory : MonoBehaviour {
     private List<LoadData.JsonDefenses.JsonTower> towers;
     private static Dictionary<string, string> textureToModel;
     private static TowerFactory instance;
+
+    private GameObject lastBuilt;
     
     void Start(){
         this.towers = LoadData.LoadTowers("Json/defenses.json").towers;
@@ -20,8 +22,7 @@ public class TowerFactory : MonoBehaviour {
         if(upgradeIndex >= towerJson.level.Count) return null;
         LoadData.JsonDefenses.JsonTower.JsonTowerLevel level = towerJson.level[upgradeIndex];
         // SetTexture
-        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(
-            "Assets/Prefabs/"+textureToModel[towerJson.name]+".prefab");
+        GameObject prefab = Resources.Load<GameObject>("Prefabs/"+textureToModel[towerJson.name]);
         if(prefab == null) return null;
         // SetStats
         AttackEnemy attack = prefab.GetComponent<AttackEnemy>();
@@ -40,14 +41,15 @@ public class TowerFactory : MonoBehaviour {
             }
         }
         // SetProjectile (Should already be there by default in the prefab)
-        GameObject projectile = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(
-             "Assets/Prefabs/"+textureToModel[level.projectile]+".prefab");
+        GameObject projectile = Resources.Load<GameObject>("Prefabs/"+textureToModel[level.projectile]);
         attack.projectile = projectile;
         return prefab;
     } 
 
     public GameObject Build(string name){
-        return Build(name, 0);
+        if(lastBuilt == null || lastBuilt.GetComponent<AttackEnemy>().towerName != name)
+            lastBuilt = Build(name, 0);
+        return lastBuilt;
     } 
 
     // In case of problems
@@ -56,8 +58,7 @@ public class TowerFactory : MonoBehaviour {
         if(towerJson == null) return null;
         LoadData.JsonDefenses.JsonTower.JsonTowerLevel level = towerJson.level[0];
         // SetTexture
-        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(
-            "Assets/Prefabs/"+textureToModel[towerJson.name]+".prefab");
+        GameObject prefab = Resources.Load<GameObject>("Prefabs/"+textureToModel[towerJson.name]);
         if(prefab == null) return null;
         AttackEnemy attack = prefab.GetComponent<AttackEnemy>();
         attack.towerName = "scout";

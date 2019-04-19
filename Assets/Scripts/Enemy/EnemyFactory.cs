@@ -16,7 +16,7 @@ public class EnemyFactory {
         LoadData.JsonWaves.JsonEnemy enemyJson = enemies.Find((e) => e.name.Equals(name));
         if(enemyJson == null) return null;
         // SetTexture
-        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/"+textureToModel[enemyJson.texture]+".prefab");
+        GameObject prefab = Resources.Load<GameObject>("Prefabs/"+textureToModel[enemyJson.texture]);
         if(prefab == null) return null;
         // SetHp
         EnemyHealth health = prefab.GetComponent<EnemyHealth>();
@@ -36,7 +36,7 @@ public class EnemyFactory {
         LoadData.JsonWaves.JsonEnemy enemyJson = enemies.Find((e) => e.name.Equals(name));
         if(enemyJson == null) return null;
         // SetTexture
-        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/"+textureToModel[enemyJson.texture]+".prefab");
+        GameObject prefab = Resources.Load<GameObject>("Prefabs/"+textureToModel[enemyJson.texture]);
         if(prefab == null) return null;
         // SetHp
         EnemyHealth health = prefab.GetComponent<EnemyHealth>();

@@ -6,7 +6,7 @@ public class RessourceManager : MonoBehaviour
 {
 
     private UnityEngine.UI.Text ressourceText;
-    public float startingRessources = 100;
+    public float startingRessources = 50;
     public float ressources;
     private float timer;
     private bool stopSignal = false;
@@ -14,17 +14,18 @@ public class RessourceManager : MonoBehaviour
 
     void Start()
     {
+        if(startingRessources == 0) startingRessources = 50;
         ressourceText = gameObject.GetComponent<UnityEngine.UI.Text>();
         ressources = startingRessources;
         DisplayRessources();
-        StartCoroutine(PassiveIncome());
+        //StartCoroutine(PassiveIncome());
         instance = this;
     }
 
     private IEnumerator PassiveIncome(){
         while(!stopSignal){
-            Add(5);
-            yield return new WaitForSecondsRealtime(1);
+            Add(1);
+            yield return new WaitForSecondsRealtime(5);
         }
     }
     

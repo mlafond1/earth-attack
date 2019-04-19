@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlaceAction : GameAction
 {
 
-    GameObject nextStructure;
+    string towerName;
     MapHelper2 mapHelper;
+    TowerFactory factory;
 
     public PlaceAction(string towerName){
         mapHelper = MapHelper2.GetInstance();
-        TowerFactory factory = TowerFactory.GetInstance();
-        this.nextStructure = factory.Build(towerName);
-        if(this.nextStructure == null) CancelAction();
+        factory = TowerFactory.GetInstance();
+        this.towerName = towerName;
+        if(factory.Build(towerName) == null) CancelAction();
     }
 
     override public void Execute(){
@@ -43,10 +44,10 @@ public class PlaceAction : GameAction
         }
         else { // Tile Open
             RessourceManager ressourceManager = RessourceManager.GetInstance();
-            AttackEnemy ae = nextStructure.GetComponent<AttackEnemy>();
+            AttackEnemy ae = factory.Build(towerName).GetComponent<AttackEnemy>();
             if(!ressourceManager.Spend(ae.cost)) return;
-            GameObject clone = GameObject.Instantiate(nextStructure, pos, nextStructure.transform.rotation);
-            clone.name = nextStructure.name + "" + indexes;
+            GameObject clone = GameObject.Instantiate(ae.gameObject, pos, ae.transform.rotation);
+            clone.name = ae.towerName + "" + indexes;
             tileMap[indexes.x, indexes.y] = true;
         }
         

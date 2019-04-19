@@ -44,7 +44,7 @@ public class UpgradeAction : GameAction
             Vector3 position = ae.transform.position;
             Quaternion rotation = ae.transform.rotation;
             GameObject.Destroy(ae.gameObject);
-            GameObject.Instantiate(upgradedTower, position, rotation);
+            GameObject.Instantiate(upgradedTower, position, rotation).name = ae.towerName + "" + indexes;
         }
         else { // Tile Open
             //Debug.Log("No object to upgrade here");

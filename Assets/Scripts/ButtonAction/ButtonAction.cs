@@ -6,9 +6,10 @@ using UnityEngine.EventSystems;
 public class ButtonAction : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
-    GameAction gameAction;
+    public GameAction gameAction {get; private set;}
     public string actionName;
     public string towerName;
+    public bool isHovered;
 
     void Start(){
         LoadGameAction();
