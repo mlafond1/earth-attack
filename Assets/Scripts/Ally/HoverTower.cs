@@ -18,7 +18,7 @@ public class HoverTower : MonoBehaviour
         }
         else{
             TowerFactory factory = TowerFactory.GetInstance();
-            AttackEnemy upgrade = factory.Build(ae.towerName,ae.upgradeIndex).GetComponent<AttackEnemy>();
+            AttackEnemy upgrade = factory.Build(ae.towerName,ae.upgradeIndex)?.GetComponent<AttackEnemy>();
             GameObject.FindObjectOfType<StatsPanel>().Display(ae, upgrade);
         }
     }

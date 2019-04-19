@@ -31,6 +31,7 @@ public class StatsPanel : MonoBehaviour
         if(upgrade == null){
             Display(tower);
             text.text += "\n\n" + "No more Upgrades";
+            return;
         }
         text.text = "Name : " + tower.towerName +
                     "\n\nCost : " + upgrade.cost +
