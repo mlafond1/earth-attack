@@ -15,9 +15,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         if(maxHealth == 0) maxHealth = 100f;
-        if(attribute == EnemyAttribute.NONE) attribute = EnemyAttribute.GROUND;
         health = maxHealth;
-        value = 0;
         HealthBarLookAtCamera();
     }
 
