@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     public EnemyAttribute attribute = EnemyAttribute.NONE;
     public Canvas heatlhContainer;
     public Image healthBar;
+    public bool isDead {get; private set;} = false;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
         health = maxHealth;
     }
 
-    public void TakeDamage(float damage, out bool isDead){
+    public void TakeDamage(float damage){
         health -= damage;
         healthBar.fillAmount = health/maxHealth;
         isDead = health <= 0;

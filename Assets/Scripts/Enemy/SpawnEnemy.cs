@@ -28,7 +28,10 @@ public class SpawnEnemy : MonoBehaviour
         }
         if(!factory.hasInitialized) return;
         if(factory.isSpawningWave) return;
-        if(!factory.hasMoreWaves()) return; // partie gagnée à la mort du derneir ennemi
+        if(!factory.hasMoreWaves()){
+            CheckWin();
+            return;
+        }
         if(!countDownStarted){
             Debug.Log("Spawning Wave in " + timeBetweenWaves);
             countDownStarted = true;
@@ -43,42 +46,14 @@ public class SpawnEnemy : MonoBehaviour
         yield return new WaitForFixedUpdate();
     }
 
+    private void CheckWin(){
+        EnemyHealth[] enemies = GameObject.FindObjectsOfType<EnemyHealth>();
+        if(enemies.Length == 0) GameObject.FindObjectOfType<EndGame>().Win();
+    }
+
     public void StopSpawning(){
         stopSignal = true;
         StopAllCoroutines();
         factory.StopSpawning();
     }
-
-    /*public float timeBetweenWaves = 5f;
-    private float countdown = 2f;
-    private float time = 30f; 
-
-
-    private int waveIndex = 1;
-
-    void Update()
-    {
-        if(countdown <= 0f && time >= 0f)
-        {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-        }
-        time -= Time.deltaTime;
-        countdown -= Time.deltaTime;
-    }
-
-    IEnumerator SpawnWave()
-    {
-        for (int i = 0; i < waveIndex; i++)
-        {
-            SpawnAnEnemy();
-            yield return new WaitForSeconds(0.5f);
-        }
-        ++waveIndex;
-    }
-
-    void SpawnAnEnemy()
-    {
-        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-    }*/
 }

@@ -65,9 +65,8 @@ public class AttackEnemy : MonoBehaviour
             GameObject gameProjectile = Instantiate(projectile, transform.position + new Vector3(0,1,0) , transform.rotation);
             gameProjectile.GetComponent<ProjectileAnimation>().SetTarget(focus.transform, 15f);
             
-            bool isDead = false;
-            focus.TakeDamage(power, out isDead);
-            if(isDead) LoseFocus();
+            focus.TakeDamage(power);
+            if(focus.isDead) LoseFocus();
         }
     }
 
@@ -86,7 +85,7 @@ public class AttackEnemy : MonoBehaviour
     void Update()
     {
         if(nextAttackTimer < attackSpeed) nextAttackTimer += Time.deltaTime*1000;
-        if(focus == null){
+        if(focus == null || focus.isDead){
             AcquireTarget();
         }
         else if (isInRadius(focus.transform.position)) {

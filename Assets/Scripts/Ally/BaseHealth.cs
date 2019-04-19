@@ -25,14 +25,7 @@ public class BaseHealth : MonoBehaviour
     }
 
     private void Death(){
-        Debug.Log("Partie perdue");
-        RessourceManager.GetInstance().StopAllCoroutines();
-        GameObject.FindObjectOfType<SpawnEnemy>().StopSpawning();
-        EnemyHealth[] enemies = GameObject.FindObjectsOfType<EnemyHealth>();
-        foreach (var e in enemies){
-            Destroy(e.gameObject);
-        }
-        // Afficher fin de partie
+        GameObject.FindObjectOfType<EndGame>().Lose();
     }
     
     public void HealthBarLookAtCamera(){

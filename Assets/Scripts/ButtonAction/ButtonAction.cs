@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ButtonAction : MonoBehaviour
+public class ButtonAction : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
     GameAction gameAction;
@@ -27,6 +28,20 @@ public class ButtonAction : MonoBehaviour
 
     void TaskOnClick(){
         ActionPlayer.SetNextAction(gameAction);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(towerName == "") return;
+        TowerFactory factory = TowerFactory.GetInstance();
+        AttackEnemy tower = factory.Build(towerName).GetComponent<AttackEnemy>();
+        GameObject.FindObjectOfType<StatsPanel>().Display(tower);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if(towerName == "") return;
+        GameObject.FindObjectOfType<StatsPanel>().Hide();
     }
 }
 
