@@ -1,24 +1,21 @@
 fileFormatVersion: 2
-guid: 05c6c3123bed4e942a0efc0d232b2228
+guid: cb631b72be6f9984fb65216c0ab8a632
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Armature
-    100004: Bras
-    100006: Canon
-    100008: Cylinder
-    100010: Pied
-    400000: //RootNode
-    400002: Armature
-    400004: Bras
-    400006: Canon
-    400008: Cylinder
-    400010: Pied
-    2100000: None__AO
-    2100002: Material_001__LaserTexture_png_001
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: Armature
+    100002: Bras
+    100004: Canon
+    100006: Cylinder
+    100008: Pied
+    100010: //RootNode
+    400000: Armature
+    400002: Bras
+    400004: Canon
+    400006: Cylinder
+    400008: Pied
+    400010: //RootNode
+    2100000: Material_001__LaserTexture2_png
     4300000: Cylinder
     7400000: Default Take
     7400002: ArmatureAction
