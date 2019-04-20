@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: dd1205ea5ceaeb2488d4cc5a62fd1824
+guid: e1659c130787b944d94ade9979e73a19
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: unnamed
-    2100002: Material_002
-    2100004: Material_001
+    2100000: Material_003__ScoutTexture_png
+    2100002: Material__ScoutTexture_png
+    2100004: Material__ScoutTexture3_png
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Icosphere
-    4300002: Cylinder
+    4300000: ConstructionSol_1
+    4300002: tower_scout3
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
