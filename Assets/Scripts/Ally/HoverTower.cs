@@ -11,7 +11,8 @@ public class HoverTower : MonoBehaviour
 
     void Start(){
         ae = GetComponent<AttackEnemy>();
-        radiusZone = GameObject.Find("RadiusZone").GetComponent<CanvasGroup>();
+        if(radiusZone == null)
+            radiusZone = GameObject.Find("RadiusZone").GetComponent<CanvasGroup>();
     }
 
     void OnMouseEnter(){
