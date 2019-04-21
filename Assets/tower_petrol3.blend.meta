@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 609d8e235e60f894a820e90ae22cb09c
+guid: 279e89f6a68c87a49ba3c7f0fe5e4f47
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -21,10 +21,11 @@ ModelImporter:
     400012: PetrolTower_001
     400014: //RootNode
     400016: Tuyaux
-    2100000: Metal__PetrolTexture_png_001
-    2100002: Vitre
-    2100004: Material
-    2100006: Petrol
+    2100000: Metal__PetrolTexture3_png
+    2100002: Metal__PetrolTexture_png_001
+    2100004: Vitre
+    2100006: Material
+    2100008: Petrol
     2300000: Petrol
     2300002: PetrolTank
     2300004: Tuyaux
