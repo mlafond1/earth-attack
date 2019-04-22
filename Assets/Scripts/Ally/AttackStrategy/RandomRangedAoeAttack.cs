@@ -21,7 +21,6 @@ public class RandomRangedAoeAttack : RangedAoeAttack{
         int y = r.Next(0,mapHelper.nbTiles);
         targetLocation = mapHelper.GetCoordinateFromIndexes(new Vector2Int(x,y));
         if(tower.name == tower.towerName + new Vector2Int(x,y)) {
-            Debug.Log("Same!");
             AcquireTarget();
             return;
         }
