@@ -24,7 +24,8 @@ public class WaveFactory : MonoBehaviour {
     public void BuildNextWave(){
         if(!hasMoreWaves() || isSpawningWave) return;
         Build(waves[waveIndex]);
-        Debug.Log("Building Wave " + waves[waveIndex].waveName);
+        GameObject.Find("WavePanel").GetComponentInChildren<UnityEngine.UI.Text>().text = 
+            "Wave : " + waves[waveIndex].waveName;
         ++waveIndex;
     }
 

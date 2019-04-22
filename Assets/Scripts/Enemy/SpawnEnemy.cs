@@ -33,7 +33,7 @@ public class SpawnEnemy : MonoBehaviour
             return;
         }
         if(!countDownStarted){
-            Debug.Log("Spawning Wave in " + timeBetweenWaves);
+            //Debug.Log("Spawning Wave in " + timeBetweenWaves);
             countDownStarted = true;
             StartCoroutine(Countdown(timeBetweenWaves));
         }
