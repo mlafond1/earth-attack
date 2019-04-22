@@ -38,6 +38,9 @@ public class DestroyAction : GameAction
             GameObject.Destroy(hit.transform.gameObject);
             //Debug.Log("Object destroyed at " + indexes);
             tileMap[indexes.x, indexes.y] = false;
+            var radiusZone = GameObject.Find("RadiusZone").GetComponent<CanvasGroup>();
+            radiusZone.GetComponentInChildren<UnityEngine.UI.Image>().transform.localScale = new Vector3(1f,1f,1f);
+            radiusZone.alpha = 0f;
         }
         else { // Tile Open
             //Debug.Log("No object to destroy here");

@@ -20,6 +20,13 @@ public class ProjectileAnimation : MonoBehaviour
         if(target == null) DestroyImmediate(gameObject);
     }
 
+    public void SetTarget(Vector3 newTarget, float newSpeed){
+        lastPosition = newTarget;
+        speed = newSpeed;
+        hasTarget = true;
+        acceleration = 1;
+    }
+
     void Update()
     {
         if(!hasTarget) return;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,24 +26,25 @@ public class TowerFactory : MonoBehaviour {
         GameObject prefab = Resources.Load<GameObject>("Prefabs/"+textureToModel[towerJson.name]);
         if(prefab == null) return null;
         // SetStats
-        AttackEnemy attack = prefab.GetComponent<AttackEnemy>();
-        attack.towerName = towerJson.name;
-        attack.description = towerJson.description;
-        attack.cost = level.cost;
-        attack.radius = level.radius;
-        attack.power = level.power;
-        attack.attackSpeed = level.attackSpeed;
-        attack.upgradeIndex = upgradeIndex +1;
-        attack.targetedAttributes.Clear();
+        AttackEnemy tower = prefab.GetComponent<AttackEnemy>();
+        tower.towerName = towerJson.name;
+        tower.description = towerJson.description;
+        tower.cost = level.cost;
+        tower.radius = level.radius;
+        tower.power = level.power;
+        tower.attackSpeed = level.attackSpeed;
+        tower.upgradeIndex = upgradeIndex +1;
+        tower.targetedAttributes.Clear();
         foreach(var t in towerJson.target){
             EnemyAttribute att = EnemyAttribute.NONE;
             if(System.Enum.TryParse(t.ToUpper(), out att)){
-                attack.targetedAttributes.Add(att);
+                tower.targetedAttributes.Add(att);
             }
         }
         // SetProjectile (Should already be there by default in the prefab)
         GameObject projectile = Resources.Load<GameObject>("Prefabs/"+textureToModel[level.projectile]);
-        attack.projectile = projectile;
+        tower.projectile = projectile;
+        tower.SetAttackStrategy(LoadAttackStrategy(tower.towerName));
         return prefab;
     } 
 
@@ -61,16 +63,17 @@ public class TowerFactory : MonoBehaviour {
         // SetTexture
         GameObject prefab = Resources.Load<GameObject>("Prefabs/"+textureToModel[towerJson.name]);
         if(prefab == null) return null;
-        AttackEnemy attack = prefab.GetComponent<AttackEnemy>();
-        attack.towerName = "scout";
-        attack.cost = 10f;
-        attack.radius = 10f;
-        attack.power = 10f;
-        attack.attackSpeed = 250f;
-        attack.upgradeIndex = 1;
-        attack.targetedAttributes.Clear();
-        attack.targetedAttributes.Add(EnemyAttribute.GROUND);
-        attack.targetedAttributes.Add(EnemyAttribute.AIR);
+        AttackEnemy tower = prefab.GetComponent<AttackEnemy>();
+        tower.towerName = "scout";
+        tower.cost = 10f;
+        tower.radius = 10f;
+        tower.power = 10f;
+        tower.attackSpeed = 250f;
+        tower.upgradeIndex = 1;
+        tower.targetedAttributes.Clear();
+        tower.targetedAttributes.Add(EnemyAttribute.GROUND);
+        tower.targetedAttributes.Add(EnemyAttribute.AIR);
+        tower.SetAttackStrategy(LoadAttackStrategy(tower.towerName));
         return prefab;
     }
 
@@ -89,13 +92,41 @@ public class TowerFactory : MonoBehaviour {
         textureToModel["bombTower"] = "constructionSol_1";
         textureToModel["nuke"] = "constructionSol_1";
         // Projectiles
-        textureToModel["bullet"] = "projectile_1";
-        textureToModel["laser"] = "projectile_1";
-        textureToModel["petrolBall"] = "projectile_1";
-        textureToModel["missile"] = "projectile_1";
-        textureToModel["arcWave"] = "projectile_1";
-        textureToModel["bomb"] = "projectile_1";
-        textureToModel["bigMissile"] = "projectile_1";
+        textureToModel["bullet"] = "projectile_0";
+        textureToModel["laser"] = "projectile_0";
+        textureToModel["petrolBall"] = "projectile_0";
+        textureToModel["missile"] = "projectile_0";
+        textureToModel["arcWave"] = "projectile_0";
+        textureToModel["bomb"] = "projectile_0";
+        textureToModel["bigMissile"] = "projectile_0";
+    }
+
+    public AttackStrategy LoadAttackStrategy(string towerName) {
+        AttackStrategy strategy = null;
+        switch(towerName){
+            case "scout":
+                strategy = new NormalAttack();
+                break;
+            case "laserTower":
+                strategy = new NormalAttack();
+                break;
+            case "petrolGun":
+                strategy = new RangedAoeSlowAttack();
+                break;
+            case "antiAir":
+                strategy = new NormalAttack();
+                break;
+            case "hammer":
+                strategy = new InPlaceAoeAttack();
+                break;
+            case "bombTower":
+                strategy = new RangedAoeAttack();
+                break;
+            case "nuke":
+                strategy = new RandomRangedAoeAttack();
+                break;
+        }
+        return strategy;
     }
 
 }

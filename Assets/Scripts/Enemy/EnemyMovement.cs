@@ -5,17 +5,39 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed = 10f;
+    private float currentSpeed = 10f;
     private Vector3 target;
     private int pointIndex = 0;
     private bool hasTarget = false;
     private bool stopSignal = false;
+    private bool isSlowed = false;
+    
     void Start()
     {
         if(FollowPoints.isReady){
             target = FollowPoints.points[0];
             hasTarget = true;
         }
+        currentSpeed = speed;
         transform.Rotate(90,0,0); // Depends on the enemy
+    }
+
+    public void ApplySlow(float slowAmount, float duration){
+        if(!isSlowed)
+            StartCoroutine(SlowDebuff(slowAmount, duration));
+        else{
+            StopCoroutine("SlowDebuff");
+            currentSpeed = speed;
+            StartCoroutine(SlowDebuff(slowAmount, duration));
+        }
+    }
+
+    IEnumerator SlowDebuff(float slowAmount, float duration){
+        isSlowed = true;
+        currentSpeed -= slowAmount;
+        yield return new WaitForSecondsRealtime(duration/1000);
+        currentSpeed = speed;
+        isSlowed = false;
     }
 
     public void SendStopSignal(){
@@ -31,7 +53,7 @@ public class EnemyMovement : MonoBehaviour
             hasTarget = true;
         }
         Vector3 dir = target - transform.position;
-        transform.Translate(dir.normalized * (speed/4.8f) * Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * (currentSpeed/4.8f) * Time.deltaTime, Space.World);
 
         if (Vector3.Distance(transform.position, target) <= 0.5f)
         {
