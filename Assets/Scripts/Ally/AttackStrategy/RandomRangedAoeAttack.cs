@@ -54,6 +54,7 @@ public class RandomRangedAoeAttack : RangedAoeAttack{
                 SpecialEffect(enemy);
             }
         }
+        DisplayAoeRadius();
         LoseFocus();
     }
 
