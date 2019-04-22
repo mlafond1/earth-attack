@@ -9,8 +9,7 @@ public class RangedAoeAttack : AttackStrategy{
     }
 
     public override void Attack(){
-        GameObject gameProjectile = GameObject.Instantiate(tower.projectile, tower.transform.position + new Vector3(0,1,0), tower.transform.rotation);
-        gameProjectile.GetComponent<ProjectileAnimation>().SetTarget(focus.transform, 15f);
+        PlayAnimation();
         EnemyHealth[] enemies = GameObject.FindObjectsOfType<EnemyHealth>();
         foreach (EnemyHealth enemy in enemies){
             if(!tower.targetedAttributes.Contains(enemy.attribute)) continue;
@@ -20,7 +19,7 @@ public class RangedAoeAttack : AttackStrategy{
             }
         }
         DisplayAoeRadius();
-        if(focus.isDead) LoseFocus();
+        if(!HasFocus()) LoseFocus();
     }
 
     protected virtual void DisplayAoeRadius(){

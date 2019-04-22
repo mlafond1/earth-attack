@@ -16,6 +16,7 @@ public class Tower : MonoBehaviour
     public AttackStrategy attack {get; private set;}
     public GameObject projectile;
 
+    public Texture[] textures;
     
 
     void Start()
@@ -23,9 +24,9 @@ public class Tower : MonoBehaviour
         if(targetedAttributes.Count == 0) {
             targetedAttributes.Add(EnemyAttribute.NONE);
         }
-        if(attack == null){
-            SetAttackStrategy(TowerFactory.GetInstance().LoadAttackStrategy(towerName));
-        }
+        var factory = TowerFactory.GetInstance();
+        SetAttackStrategy(TowerFactory.GetInstance().LoadAttackStrategy(towerName));
+        TowerFactory.GetInstance().LoadTexture(this);
         nextAttackTimer = 0f;
     }
 
@@ -45,7 +46,10 @@ public class Tower : MonoBehaviour
         Vector3 direction = attack.GetTargetLocation() - transform.position;
         Quaternion rotationToward = Quaternion.LookRotation(direction);
         transform.rotation = rotationToward;
-        transform.Rotate(-90f,0,0);
+        if(towerName.StartsWith("scout") || towerName.StartsWith("bomb") || towerName.StartsWith("anti") || towerName.StartsWith("nuke"))
+            transform.Rotate(-90f,0,0);
+        else
+            transform.Rotate(0,180,0);
     }
 
     void Update()

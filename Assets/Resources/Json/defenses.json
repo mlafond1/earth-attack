@@ -45,7 +45,7 @@
 				{
 					"cost": 30,
 					"name": "Canon laser",
-					"power": 10, "radius": 150, "attackSpeed": 1250, "texture": "laserTower",
+					"power": 10, "radius": 150, "attackSpeed": 1250, "texture": "laserTower1",
 					"projectile": "laser"
 				},
 				{
@@ -82,7 +82,7 @@
 				{
 					"cost": 30,
 					"name": "Canon à pétrol",
-					"power": 25, "radius": 130, "attackSpeed": 1750, "texture": "petrolGun",
+					"power": 25, "radius": 130, "attackSpeed": 1750, "texture": "petrolGun1",
 					"projectile": "petrolBall"
 				},
 				{
@@ -224,7 +224,7 @@
 				{
 					"cost": 1000,
 					"name": "Nucléaire",
-					"power": 1500, "radius": 10000, "attackSpeed": 5000, "texture": "nuke",
+					"power": 1500, "radius": 10000, "attackSpeed": 5000, "texture": "nuke1",
 					"projectile": "bigMissile"
 				},
 				{

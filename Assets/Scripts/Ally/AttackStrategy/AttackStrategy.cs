@@ -31,6 +31,12 @@ public abstract class AttackStrategy {
         }
     }
 
+    public virtual void PlayAnimation(){
+        GameObject gameProjectile = GameObject.Instantiate(tower.projectile, tower.transform.position + new Vector3(0,2,0) , tower.transform.rotation);
+        if(tower.towerName.StartsWith("scout")) gameProjectile.transform.Rotate(-90,0,0);
+        gameProjectile.GetComponent<ProjectileAnimation>().SetTarget(focus.transform, 15f);
+    }
+
     public abstract void Attack();
 
     protected virtual void SpecialEffect(EnemyHealth enemy){}

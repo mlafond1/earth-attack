@@ -8,7 +8,7 @@ public class RandomRangedAoeAttack : RangedAoeAttack{
 
     bool hasFocus;
 
-    public RandomRangedAoeAttack(float radius=20f) : base(radius){
+    public RandomRangedAoeAttack(float radius=12f) : base(radius){
         r = new System.Random();
         mapHelper = MapHelper2.GetInstance();
         hasFocus = false;
@@ -43,18 +43,13 @@ public class RandomRangedAoeAttack : RangedAoeAttack{
         return targetLocation;
     }
 
-    public override void Attack(){
+    public override void PlayAnimation(){
         GameObject gameProjectile = GameObject.Instantiate(tower.projectile, tower.transform.position + new Vector3(0,1,0), tower.transform.rotation);
         gameProjectile.GetComponent<ProjectileAnimation>().SetTarget(targetLocation, 15f);
-        EnemyHealth[] enemies = GameObject.FindObjectsOfType<EnemyHealth>();
-        foreach (EnemyHealth enemy in enemies){
-            if(!tower.targetedAttributes.Contains(enemy.attribute)) continue;
-            if(IsInAreaOfEffect(enemy)){
-                enemy.TakeDamage(tower.power);
-                SpecialEffect(enemy);
-            }
-        }
-        DisplayAoeRadius();
+    }
+
+    public override void Attack(){
+        base.Attack();
         LoseFocus();
     }
 
