@@ -31,20 +31,20 @@ public class UpgradeAction : GameAction
         if (!mapHelper.IndexesInBound(indexes)) return;
         
         bool[,] tileMap = mapHelper.tiles;
-        AttackEnemy ae = hit.transform.gameObject.GetComponent<AttackEnemy>();
-        if(tileMap[indexes.x, indexes.y] && ae != null){ // Tile Occupied
+        Tower tower = hit.transform.gameObject.GetComponent<Tower>();
+        if(tileMap[indexes.x, indexes.y] && tower != null){ // Tile Occupied
             TowerFactory factory = TowerFactory.GetInstance();
-            GameObject upgradedTower = factory.Build(ae.towerName, ae.upgradeIndex);
+            GameObject upgradedTower = factory.Build(tower.towerName, tower.upgradeIndex);
             if(upgradedTower == null) return;
             //Debug.Log("Upgrading at " + indexes);
             // Upgrade
             RessourceManager ressourceManager = RessourceManager.GetInstance();
-            AttackEnemy uae = upgradedTower.GetComponent<AttackEnemy>();
+            Tower uae = upgradedTower.GetComponent<Tower>();
             if(!ressourceManager.Spend(uae.cost)) return;
-            Vector3 position = ae.transform.position;
-            Quaternion rotation = ae.transform.rotation;
-            GameObject.Destroy(ae.gameObject);
-            GameObject.Instantiate(upgradedTower, position, rotation).name = ae.towerName + "" + indexes;
+            Vector3 position = tower.transform.position;
+            Quaternion rotation = tower.transform.rotation;
+            GameObject.Destroy(tower.gameObject);
+            GameObject.Instantiate(upgradedTower, position, rotation).name = tower.towerName + "" + indexes;
         }
         else { // Tile Open
             //Debug.Log("No object to upgrade here");

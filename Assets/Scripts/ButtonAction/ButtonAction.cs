@@ -35,7 +35,7 @@ public class ButtonAction : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         if(towerName == "") return;
         TowerFactory factory = TowerFactory.GetInstance();
-        AttackEnemy tower = factory.Build(towerName).GetComponent<AttackEnemy>();
+        Tower tower = factory.Build(towerName).GetComponent<Tower>();
         GameObject.FindObjectOfType<StatsPanel>().Display(tower);
     }
 

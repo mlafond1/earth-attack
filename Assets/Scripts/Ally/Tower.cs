@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackEnemy : MonoBehaviour
+public class Tower : MonoBehaviour
 {
     public float cost = 10f;
     public string towerName = "scout";

@@ -18,7 +18,7 @@ public class TowerFactory : MonoBehaviour {
     }
 
     public GameObject Build(string name, int upgradeIndex){
-        LoadData.JsonDefenses.JsonTower towerJson = towers.Find((e) => e.name.Equals(name));
+        LoadData.JsonDefenses.JsonTower towerJson = towers.Find((t) => t.name.Equals(name));
         if(towerJson == null) return null;
         if(upgradeIndex >= towerJson.level.Count) return null;
         LoadData.JsonDefenses.JsonTower.JsonTowerLevel level = towerJson.level[upgradeIndex];
@@ -26,7 +26,7 @@ public class TowerFactory : MonoBehaviour {
         GameObject prefab = Resources.Load<GameObject>("Prefabs/"+textureToModel[towerJson.name]);
         if(prefab == null) return null;
         // SetStats
-        AttackEnemy tower = prefab.GetComponent<AttackEnemy>();
+        Tower tower = prefab.GetComponent<Tower>();
         tower.towerName = towerJson.name;
         tower.description = towerJson.description;
         tower.cost = level.cost;
@@ -35,9 +35,9 @@ public class TowerFactory : MonoBehaviour {
         tower.attackSpeed = level.attackSpeed;
         tower.upgradeIndex = upgradeIndex +1;
         tower.targetedAttributes.Clear();
-        foreach(var t in towerJson.target){
+        foreach(var target in towerJson.target){
             EnemyAttribute att = EnemyAttribute.NONE;
-            if(System.Enum.TryParse(t.ToUpper(), out att)){
+            if(System.Enum.TryParse(target.ToUpper(), out att)){
                 tower.targetedAttributes.Add(att);
             }
         }
@@ -49,7 +49,7 @@ public class TowerFactory : MonoBehaviour {
     } 
 
     public GameObject Build(string name){
-        AttackEnemy ae = lastBuilt?.GetComponent<AttackEnemy>();
+        Tower ae = lastBuilt?.GetComponent<Tower>();
         if(lastBuilt == null || ae.towerName != name || ae.upgradeIndex != 0)
             lastBuilt = Build(name, 0);
         return lastBuilt;
@@ -63,7 +63,7 @@ public class TowerFactory : MonoBehaviour {
         // SetTexture
         GameObject prefab = Resources.Load<GameObject>("Prefabs/"+textureToModel[towerJson.name]);
         if(prefab == null) return null;
-        AttackEnemy tower = prefab.GetComponent<AttackEnemy>();
+        Tower tower = prefab.GetComponent<Tower>();
         tower.towerName = "scout";
         tower.cost = 10f;
         tower.radius = 10f;

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public abstract class AttackStrategy {
 
-    protected AttackEnemy tower;
+    protected Tower tower;
     protected EnemyHealth focus;
 
-    public void SetTower(AttackEnemy ae){
-        tower = ae;
+    public void SetTower(Tower tower){
+        this.tower = tower;
     }
 
     public virtual void AcquireTarget(){

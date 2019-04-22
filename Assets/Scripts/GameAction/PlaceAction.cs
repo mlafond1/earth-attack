@@ -44,10 +44,10 @@ public class PlaceAction : GameAction
         }
         else { // Tile Open
             RessourceManager ressourceManager = RessourceManager.GetInstance();
-            AttackEnemy ae = factory.Build(towerName).GetComponent<AttackEnemy>();
-            if(!ressourceManager.Spend(ae.cost)) return;
-            GameObject clone = GameObject.Instantiate(ae.gameObject, pos, ae.transform.rotation);
-            clone.name = ae.towerName + "" + indexes;
+            Tower tower = factory.Build(towerName).GetComponent<Tower>();
+            if(!ressourceManager.Spend(tower.cost)) return;
+            GameObject clone = GameObject.Instantiate(tower.gameObject, pos, tower.transform.rotation);
+            clone.name = tower.towerName + "" + indexes;
             tileMap[indexes.x, indexes.y] = true;
         }
         

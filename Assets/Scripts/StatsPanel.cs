@@ -15,7 +15,7 @@ public class StatsPanel : MonoBehaviour
         Hide();
     }
 
-    public void Display(AttackEnemy tower){
+    public void Display(Tower tower){
         text.text = "Name : " + tower.towerName +
                     "\n\nCost : " + tower.cost +
                     "\nPower : " + tower.power +
@@ -27,7 +27,7 @@ public class StatsPanel : MonoBehaviour
         group.interactable = false;
     }
 
-    public void Display(AttackEnemy tower, AttackEnemy upgrade){
+    public void Display(Tower tower, Tower upgrade){
         if(upgrade == null){
             Display(tower);
             text.text += "\n\n" + "No more Upgrades";
