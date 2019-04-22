@@ -1,29 +1,48 @@
 fileFormatVersion: 2
-guid: 05c6c3123bed4e942a0efc0d232b2228
+guid: fad2746b4c0c89d4c923ebdc4d1764a0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Armature
-    100004: Bras
-    100006: Canon
-    100008: Cylinder
-    100010: Pied
-    400000: //RootNode
-    400002: Armature
-    400004: Bras
-    400006: Canon
-    400008: Cylinder
-    400010: Pied
-    2100000: None__AO
-    2100002: Material_001__LaserTexture_png_001
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cylinder
+    100000: Base
+    100002: Canon
+    100004: DebutTuyaux
+    100006: Petrol
+    100008: PetrolTank
+    100010: PetrolTower
+    100012: PetrolTower_001
+    100014: //RootNode
+    100016: Tuyaux
+    400000: Base
+    400002: Canon
+    400004: DebutTuyaux
+    400006: Petrol
+    400008: PetrolTank
+    400010: PetrolTower
+    400012: PetrolTower_001
+    400014: //RootNode
+    400016: Tuyaux
+    2100000: Metal__PetrolTexture2_png
+    2100002: Metal__PetrolTexture_png_001
+    2100004: Vitre
+    2100006: Material
+    2100008: Petrol
+    2300000: Petrol
+    2300002: PetrolTank
+    2300004: Tuyaux
+    3300000: Petrol
+    3300002: PetrolTank
+    3300004: Tuyaux
+    4300000: PetrolTower
+    4300002: DebutTuyaux
+    4300004: PetrolTank
+    4300006: Tuyaux
+    4300008: Petrol
     7400000: Default Take
-    7400002: ArmatureAction
+    7400002: Shoot
     9500000: //RootNode
-    13700000: Cylinder
+    13700000: DebutTuyaux
+    13700002: PetrolTower
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
