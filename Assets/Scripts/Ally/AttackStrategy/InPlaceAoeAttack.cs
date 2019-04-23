@@ -13,7 +13,13 @@ public class InPlaceAoeAttack : RangedAoeAttack{
 
     public override void PlayAnimation(){
         //tower.GetComponent<Animator>().Play("Default Take");
-        base.PlayAnimation(); //temp
+        //        base.PlayAnimation(); //temp
+        Animator animator = tower.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.Play("Default Take");
+            animator.Play("ArmatureAction");
+        }
     }
 
     protected override void DisplayAoeRadius(){
