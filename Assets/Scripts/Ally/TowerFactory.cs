@@ -90,7 +90,7 @@ public class TowerFactory : MonoBehaviour {
         nameToModel["antiAir"] = "tower_antiair";
         nameToModel["hammer"] = "tower_hammer";
         nameToModel["bombTower"] = "tower_bomb";
-        nameToModel["nuke"] = "constructionSol_1";
+        nameToModel["nuke"] = "tower_nuke";
         // Projectiles
         nameToModel["bullet"] = "projectile_1";
         nameToModel["laser"] = "projectile_laser";
@@ -98,7 +98,7 @@ public class TowerFactory : MonoBehaviour {
         nameToModel["missile"] = "projectile_antiair";
         nameToModel["arcWave"] = "projectile_1";
         nameToModel["bomb"] = "projectile_bomb";
-        nameToModel["bigMissile"] = "projectile_antiair";
+        nameToModel["bigMissile"] = "projectile_nuke";
     }
 
     public AttackStrategy LoadAttackStrategy(string towerName) {
