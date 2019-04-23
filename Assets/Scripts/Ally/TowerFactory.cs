@@ -87,7 +87,7 @@ public class TowerFactory : MonoBehaviour {
         nameToModel["scout"] = "tower_scout";
         nameToModel["laserTower"] = "tower_laser";
         nameToModel["petrolGun"] = "tower_petrol";
-        nameToModel["antiAir"] = "constructionSol_1";
+        nameToModel["antiAir"] = "tower_antiair";
         nameToModel["hammer"] = "tower_hammer";
         nameToModel["bombTower"] = "constructionSol_1";
         nameToModel["nuke"] = "constructionSol_1";
