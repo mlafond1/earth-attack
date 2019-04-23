@@ -48,14 +48,14 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102051331931319092
+--- !u!1102 &1102748484266669046
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ArmatureAction
+  m_Name: Default Take
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -74,14 +74,14 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102734413640367442
+--- !u!1102 &1102962087131028614
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Default Take
+  m_Name: ArmatureAction
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -113,11 +113,11 @@ AnimatorStateMachine:
     m_State: {fileID: 1102040834565620482}
     m_Position: {x: 312, y: 12, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102734413640367442}
-    m_Position: {x: 348, y: 96, z: 0}
+    m_State: {fileID: 1102748484266669046}
+    m_Position: {x: 312, y: 132, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102051331931319092}
-    m_Position: {x: 348, y: 156, z: 0}
+    m_State: {fileID: 1102962087131028614}
+    m_Position: {x: 312, y: 192, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
