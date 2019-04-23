@@ -46,6 +46,11 @@ public class RandomRangedAoeAttack : RangedAoeAttack{
     public override void PlayAnimation(){
         GameObject gameProjectile = GameObject.Instantiate(tower.projectile, tower.transform.position + new Vector3(0,1,0), tower.transform.rotation);
         gameProjectile.GetComponent<ProjectileAnimation>().SetTarget(targetLocation, 15f);
+        Animator animator = tower.GetComponent<Animator>();
+        if(animator != null){
+            animator.Play("Default Take");
+            animator.Play("ArmatureAction");
+        }
     }
 
     public override void Attack(){

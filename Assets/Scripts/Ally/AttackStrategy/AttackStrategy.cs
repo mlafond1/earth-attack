@@ -35,6 +35,11 @@ public abstract class AttackStrategy {
         GameObject gameProjectile = GameObject.Instantiate(tower.projectile, tower.transform.position + new Vector3(0,2,0) , tower.transform.rotation);
         if(tower.towerName.StartsWith("scout")) gameProjectile.transform.Rotate(-90,0,0);
         gameProjectile.GetComponent<ProjectileAnimation>().SetTarget(focus.transform, 15f);
+        Animator animator = tower.GetComponent<Animator>();
+        if(animator != null){
+            animator.Play("Default Take");
+            animator.Play("ArmatureAction");
+        }
     }
 
     public abstract void Attack();
