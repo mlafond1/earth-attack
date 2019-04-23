@@ -6,16 +6,16 @@ public class MouseHover : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<Renderer>().material.color = Color.blue;
+        GetComponent<Renderer>().material.color = Color.red;
     }
 
     void OnMouseEnter()
     {
-        GetComponent<Renderer>().material.color = Color.red;
+        GetComponent<Renderer>().material.color = Color.black;
     }
 
     void OnMouseExit()
     {
-        GetComponent<Renderer>().material.color = Color.blue;
+        GetComponent<Renderer>().material.color = Color.red;
     }
 }
