@@ -46,10 +46,13 @@ public class Tower : MonoBehaviour
         Vector3 direction = attack.GetTargetLocation() - transform.position;
         Quaternion rotationToward = Quaternion.LookRotation(direction);
         transform.rotation = rotationToward;
-        if(towerName.StartsWith("scout") || towerName.StartsWith("anti"))
+        if(towerName.StartsWith("scout")/* || towerName.StartsWith("anti")*/)
             transform.Rotate(-90f,0,0);
         else
-            transform.Rotate(0,180,0);
+        {
+            if (!towerName.StartsWith("anti"))
+                transform.Rotate(0,180,0);
+        }
     }
 
     void Update()
