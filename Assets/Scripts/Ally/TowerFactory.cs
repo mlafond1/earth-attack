@@ -89,16 +89,16 @@ public class TowerFactory : MonoBehaviour {
         nameToModel["petrolGun"] = "tower_petrol";
         nameToModel["antiAir"] = "tower_antiair";
         nameToModel["hammer"] = "tower_hammer";
-        nameToModel["bombTower"] = "constructionSol_1";
+        nameToModel["bombTower"] = "tower_bomb";
         nameToModel["nuke"] = "constructionSol_1";
         // Projectiles
         nameToModel["bullet"] = "projectile_1";
         nameToModel["laser"] = "projectile_laser";
         nameToModel["petrolBall"] = "projectile_petrol";
-        nameToModel["missile"] = "projectile_1";
-        nameToModel["arcWave"] = "projectile_0";
-        nameToModel["bomb"] = "projectile_1";
-        nameToModel["bigMissile"] = "projectile_petrol";
+        nameToModel["missile"] = "projectile_antiair";
+        nameToModel["arcWave"] = "projectile_1";
+        nameToModel["bomb"] = "projectile_bomb";
+        nameToModel["bigMissile"] = "projectile_antiair";
     }
 
     public AttackStrategy LoadAttackStrategy(string towerName) {
