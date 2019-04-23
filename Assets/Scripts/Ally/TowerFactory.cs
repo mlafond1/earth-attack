@@ -6,14 +6,14 @@ using UnityEngine;
 public class TowerFactory : MonoBehaviour {
 
     private List<LoadData.JsonDefenses.JsonTower> towers;
-    private static Dictionary<string, string> textureToModel;
+    private static Dictionary<string, string> nameToModel;
     private static TowerFactory instance;
 
     private GameObject lastBuilt;
     
     void Start(){
         this.towers = LoadData.LoadTowers("Json/defenses").towers;
-        if(textureToModel == null) LoadTextureToModel();
+        if(nameToModel == null) LoadNameToModel();
         instance = this;
     }
 
@@ -23,7 +23,7 @@ public class TowerFactory : MonoBehaviour {
         if(upgradeIndex >= towerJson.level.Count) return null;
         LoadData.JsonDefenses.JsonTower.JsonTowerLevel level = towerJson.level[upgradeIndex];
         // SetTexture
-        GameObject prefab = Resources.Load<GameObject>("Prefabs/"+textureToModel[towerJson.name]);
+        GameObject prefab = Resources.Load<GameObject>("Prefabs/"+nameToModel[towerJson.name]);
         if(prefab == null) return null;
         // SetStats
         Tower tower = prefab.GetComponent<Tower>();
@@ -42,9 +42,8 @@ public class TowerFactory : MonoBehaviour {
             }
         }
         // SetProjectile (Should already be there by default in the prefab)
-        GameObject projectile = Resources.Load<GameObject>("Prefabs/"+textureToModel[level.projectile]);
+        GameObject projectile = Resources.Load<GameObject>("Prefabs/"+nameToModel[level.projectile]);
         tower.projectile = projectile;
-        tower.SetAttackStrategy(LoadAttackStrategy(tower.towerName));
         return prefab;
     } 
 
@@ -61,9 +60,10 @@ public class TowerFactory : MonoBehaviour {
         if(towerJson == null) return null;
         LoadData.JsonDefenses.JsonTower.JsonTowerLevel level = towerJson.level[0];
         // SetTexture
-        GameObject prefab = Resources.Load<GameObject>("Prefabs/"+textureToModel[towerJson.name]);
+        GameObject prefab = Resources.Load<GameObject>("Prefabs/"+nameToModel[towerJson.name]);
         if(prefab == null) return null;
         Tower tower = prefab.GetComponent<Tower>();
+        // SetStats
         tower.towerName = "scout";
         tower.cost = 10f;
         tower.radius = 10f;
@@ -81,24 +81,24 @@ public class TowerFactory : MonoBehaviour {
         return instance;
     }
 
-    private static void LoadTextureToModel(){
-        textureToModel = new Dictionary<string, string>();
+    private static void LoadNameToModel(){
+        nameToModel = new Dictionary<string, string>();
         // Towers
-        textureToModel["scout"] = "constructionSol_1";
-        textureToModel["laserTower"] = "constructionSol_1";
-        textureToModel["petrolGun"] = "constructionSol_1";
-        textureToModel["antiAir"] = "constructionSol_1";
-        textureToModel["hammer"] = "constructionSol_1";
-        textureToModel["bombTower"] = "constructionSol_1";
-        textureToModel["nuke"] = "constructionSol_1";
+        nameToModel["scout"] = "tower_scout";
+        nameToModel["laserTower"] = "tower_laser";
+        nameToModel["petrolGun"] = "tower_petrol";
+        nameToModel["antiAir"] = "tower_antiair";
+        nameToModel["hammer"] = "tower_hammer";
+        nameToModel["bombTower"] = "constructionSol_1";
+        nameToModel["nuke"] = "constructionSol_1";
         // Projectiles
-        textureToModel["bullet"] = "projectile_0";
-        textureToModel["laser"] = "projectile_0";
-        textureToModel["petrolBall"] = "projectile_0";
-        textureToModel["missile"] = "projectile_0";
-        textureToModel["arcWave"] = "projectile_0";
-        textureToModel["bomb"] = "projectile_0";
-        textureToModel["bigMissile"] = "projectile_0";
+        nameToModel["bullet"] = "projectile_1";
+        nameToModel["laser"] = "projectile_laser";
+        nameToModel["petrolBall"] = "projectile_petrol";
+        nameToModel["missile"] = "projectile_1";
+        nameToModel["arcWave"] = "projectile_0";
+        nameToModel["bomb"] = "projectile_1";
+        nameToModel["bigMissile"] = "projectile_petrol";
     }
 
     public AttackStrategy LoadAttackStrategy(string towerName) {
@@ -127,6 +127,15 @@ public class TowerFactory : MonoBehaviour {
                 break;
         }
         return strategy;
+    }
+
+    public void LoadTexture(Tower tower){
+        Renderer renderer = tower.gameObject.GetComponent<Renderer>();
+        if(renderer == null){
+            renderer = tower.gameObject.GetComponentInChildren<Renderer>();
+        }
+        if(tower.upgradeIndex-1 < tower.textures.Length && tower.upgradeIndex-1 >=0)
+            renderer.material.SetTexture("_MainTex", tower.textures[tower.upgradeIndex-1]);
     }
 
 }
